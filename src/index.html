@@ -15,7 +15,7 @@
 
     <img src="./assets/mainbar/Cuba_Mainbar_InlineOptions_001.jpg">
 
-    <div class="hed">CUBA <br>REDISCOVERED</div>
+    <div class="hed">REDISCOVERING <br>CUBA</div>
 
     <section class="narrow">
       <div class="chatter">Seattle Times reporter Ángel González returned to the home of his ancestors for a glimpse of what Cuba is becoming as the U.S. ends its quarantine. He found a nation regaining some of its old capitalist bustle, even as it struggles with inequality and Marxist rigidity.</div>
@@ -26,24 +26,9 @@
         By Ángel González<br>
         Seattle Times business reporter
       </div>
-
-      <div class="text">
-        <p><div class="dropcap">I</div>'ve come a long way to see the spot where General Angel del Castillo Agramonte, a hero of Cuba's long struggle for independence from Spain, made his last stand.
-        <p>That man, whom historians described as a "tempest on horseback," was my grandmother's grandfather, a U.S.-educated Cuban aristocrat who took up arms against the mother country.
-      </div>
     </section>
 
-    <img src="./assets/mainbar/Cuba_Mainbar_InlineOptions_009.jpg">
-    <div class="caption">Caption text goes here</div>
-
-    <section class="narrow">
-      <div class="text">
-        <p>That idea of Cuba was buried under Fidel Castro's communist revolution. Hundreds of thousands, including my father and grandmother, fled the island. My uncle stayed, first to fight the revolution, then to embrace it.
-        <p>In time, stifling controls and a long standoff with the U.S. condemned to stagnation what had been a modern country, albeit one full of disparities.
-          
-        <%= t.include("./partials/_contact.html") %>
-      </div>
-    </section>
+    <%= t.include("./_mainbar.html") %>
 
     <script src="app.js" async></script>
     <% if (json.project.production) { %>
