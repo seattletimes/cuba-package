@@ -86,8 +86,15 @@ h4 {
 
 //header and menu
 nav.main-nav {
-  background: @df-charcoal;
+  background: white;
   height: 50px;
+  // border-bottom: 1px solid @df-light-gray;
+  // box-shadow: 0 2px 7px rgba(0, 0, 0, .1);
+  // position: relative;
+
+  @media @mobile {
+    height: 40px;
+  }
 
   .wrapper {
     max-width: 1400px;
@@ -103,7 +110,7 @@ nav.main-nav {
   .logo {
     img {
       height: 22px;
-      margin-top: 6px;
+      margin-top: 5px;
       max-height: 100%;
 
       @media @mobile {
