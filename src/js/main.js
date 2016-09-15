@@ -25,6 +25,18 @@ qsa(".gallery").forEach(function(g) {
   });
 });
 
+qsa(".sidestory").forEach(function(r) {
+  r.addEventListener("click", function(e) {
+    if (e.target.classList.contains("read-more")) {
+      if (r.classList.contains("expanded")) {
+        r.classList.remove("expanded");
+      } else {
+        r.classList.add("expanded");
+      }
+    }
+  })
+})
+
 // var animateScroll = require("./lib/animateScroll");
 
 // qsa(".main-nav a").forEach(function(a) {

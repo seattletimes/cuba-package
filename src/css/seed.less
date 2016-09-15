@@ -186,12 +186,24 @@ section {
 .sidestory {
   position: relative;
   margin: 40px 0;
-  padding: 40px;
-  border-top: 1px solid @yellow;
-  border-bottom: 1px solid @yellow;
+  border-top: 2px solid @yellow;
   font-family: @df-sans;
   font-size: 16px;
   line-height: 1.5em;
+
+  &.expanded {
+    border-bottom: 2px solid @yellow;
+  }
+
+  .inner {
+    height: 0;
+    overflow: hidden;
+
+    .expanded& {
+      height: 100%;
+      margin: 40px;
+    }
+  }
 
   p {
     width: 100%;
@@ -202,14 +214,23 @@ section {
     margin-right: 4px;
   }
   .read-more {
+    cursor: pointer;
     background: white;
-    border: 1px solid @yellow;
+    border: 2px solid @yellow;
     padding: 1px 10px 0 10px;
     font-weight: bold;
     position: absolute;
     top: 0;
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
+
+    &:hover {
+      background: @yellow;
+
+      .caret {
+        color: black;
+      }
+    }
   }
 }
 
