@@ -18,8 +18,8 @@ qsa(".gallery").forEach(function(g) {
       if (next) var nextNext = next.previousElementSibling;
     }
     if (!next || !next.classList.contains("gallery-img")) return;
-    if (!next.src) next.src = next.getAttribute("data-src");
-    if (nextNext && !nextNext.src) nextNext.src = nextNext.getAttribute("data-src");
+    if (!next.src) next.querySelector("img").src = next.querySelector("img").getAttribute("data-src");
+    if (nextNext && nextNext.classList.contains("gallery-img") && !nextNext.src) nextNext.querySelector("img").src = nextNext.querySelector("img").getAttribute("data-src");
     current.classList.remove("active");
     next.classList.add("active");
   });

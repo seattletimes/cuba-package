@@ -57,20 +57,27 @@
 </section>
 
 <div class="gallery">
-  <div class="prev">Previous</div>
+  <div class="subhed">Havana gallery</div>
+  <div class="chatter">Chatter</div>
+  <i class="prev arrow fa fa-chevron-left" aria-hidden="true"></i>
   <% csv.captions.filter(function(c) {
     return c.gallery == "havana";
   }).forEach(function(c, i) { %>
       <% if (!i) { %>
-        <img src="./assets/mainbar/<%= c.image %>" class="active gallery-img">
+        <div class="active gallery-img">
+          <img src="./assets/mainbar/<%= c.image %>">
+          <section><p class="caption"><%= c.caption %></p></section>
+        </div>
       <% } else { %>
-        <img data-src="./assets/mainbar/<%= c.image %>" class="gallery-img">
+        <div class="gallery-img">
+          <img data-src="./assets/mainbar/<%= c.image %>">
+          <section><p class="caption"><%= c.caption %></p></section>
+        </div>
       <% } %>
+      
   <% }); %>
-  <div class="next">Next</div>
-  <div class="caption">HAVANA GALLERY</div>
+  <i class="next arrow fa fa-chevron-right" aria-hidden="true"></i>
 </div>
-
 
 <section>
   <p>Today some of Havana’s glories don’t look so faded. Large parts of Old Havana, where I once saw streets that could have belonged in a World War II movie, are now a stunning re-creation of its heyday. Fancy restaurants, art galleries and sidewalk cafés populate grand European buildings restored over the last few years. There’s even a microbrewery in the Plaza Vieja, a 16th-century square.
@@ -96,7 +103,28 @@
   <p>Pérez says it is not, and that things are opening up. “We’re going to have access to what everybody else has,” she says. “It’s all about not getting angry at each other.”
 </section>
 
-<div class="caption">FABRICA GALLERY</div>
+<div class="gallery">
+  <div class="subhed">Fabrica gallery</div>
+  <div class="chatter">Chatter</div>
+  <i class="prev arrow fa fa-chevron-left" aria-hidden="true"></i>
+  <% csv.captions.filter(function(c) {
+    return c.gallery == "fabrica";
+  }).forEach(function(c, i) { %>
+      <% if (!i) { %>
+        <div class="active gallery-img">
+          <img src="./assets/mainbar/<%= c.image %>">
+          <section><p class="caption"><%= c.caption %></p></section>
+        </div>
+      <% } else { %>
+        <div class="gallery-img">
+          <img data-src="./assets/mainbar/<%= c.image %>">
+          <section><p class="caption"><%= c.caption %></p></section>
+        </div>
+      <% } %>
+      
+  <% }); %>
+  <i class="next arrow fa fa-chevron-right" aria-hidden="true"></i>
+</div>
 
 <section>
   <div class="divider"></div>
@@ -152,7 +180,28 @@
   <p>“Here only business people have a future,” says a pharmacy student at the University of Havana, who added that she’ll emigrate as soon as she gets her degree.
 </section>
 
-<div class="caption">CAMAGUEY GALLERY</div>
+<div class="gallery">
+  <div class="subhed">Camaguey gallery</div>
+  <div class="chatter">Chatter</div>
+  <i class="prev arrow fa fa-chevron-left" aria-hidden="true"></i>
+  <% csv.captions.filter(function(c) {
+    return c.gallery == "camaguey";
+  }).forEach(function(c, i) { %>
+      <% if (!i) { %>
+        <div class="active gallery-img">
+          <img src="./assets/mainbar/<%= c.image %>">
+          <section><p class="caption"><%= c.caption %></p></section>
+        </div>
+      <% } else { %>
+        <div class="gallery-img">
+          <img data-src="./assets/mainbar/<%= c.image %>">
+          <section><p class="caption"><%= c.caption %></p></section>
+        </div>
+      <% } %>
+      
+  <% }); %>
+  <i class="next arrow fa fa-chevron-right" aria-hidden="true"></i>
+</div>
 
 <section>
   <div class="divider"></div>
@@ -167,7 +216,28 @@
   <p>“Don’t you see how pretty Camagüey has become?” asks my cousin Livita Castillo, whom I surprise with my visit.
 </section>
 
-<div class="caption">FAMILY GALLERY</div>
+<div class="gallery">
+  <div class="subhed">Family gallery</div>
+  <div class="chatter">Chatter</div>
+  <i class="prev arrow fa fa-chevron-left" aria-hidden="true"></i>
+  <% csv.captions.filter(function(c) {
+    return c.gallery == "family";
+  }).forEach(function(c, i) { %>
+      <% if (!i) { %>
+        <div class="active gallery-img">
+          <img src="./assets/mainbar/<%= c.image %>">
+          <section><p class="caption"><%= c.caption %></p></section>
+        </div>
+      <% } else { %>
+        <div class="gallery-img">
+          <img data-src="./assets/mainbar/<%= c.image %>">
+          <section><p class="caption"><%= c.caption %></p></section>
+        </div>
+      <% } %>
+      
+  <% }); %>
+  <i class="next arrow fa fa-chevron-right" aria-hidden="true"></i>
+</div>
 
 <section>
   <p>But Camagüey is still a hard place to make a living, as the tourists fueling Havana’s vibrancy are rare.
@@ -202,7 +272,9 @@
   <p>Izquierdo feels the latest changes are irreversible, and deeper restructuring will in time solve Cubans’ economic problems. But one must be patient.
   <p>Further reform isn’t likely while 90-year old Fidel Castro, the one-time rebel who broke with Cuba’s capitalist past, is alive, he says.
   <p>“Maybe,” Izquierdo says, “it’s a matter of respect for tradition, for history.”
+
+  <%= t.include("./_contact.html") %>
 </section>
 
-<%= t.include("./_contact.html") %>
+
 
