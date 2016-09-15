@@ -24,3 +24,18 @@ qsa(".gallery").forEach(function(g) {
     next.classList.add("active");
   });
 });
+
+// var animateScroll = require("./lib/animateScroll");
+
+// qsa(".main-nav a").forEach(function(a) {
+//   a.addEventListener("click", function(e) {
+//     var href = this.getAttribute("href");
+//     if (href.indexOf("#") != 0) return;
+//     var section = document.querySelector(href);
+//     if (!section) return;
+//     e.preventDefault();
+    
+//     animateScroll(section);
+//     window.history.pushState(href, href, href);
+//   });
+// });
