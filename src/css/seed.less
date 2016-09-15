@@ -10,6 +10,16 @@ body {
   margin: auto;
 }
 
+.story-link {
+  font-family: "Arvo", @df-sans;
+  text-transform: uppercase;
+  color: black;
+  font-size: 14px;
+  padding: 0 5px;
+  vertical-align: top;
+  margin-top: 20px;
+}
+
 .img-title {
   width: 40%;
   margin: auto;
@@ -28,9 +38,29 @@ body {
   padding: 20px 0;
 }
 
-section.narrow {
-  max-width: 670px;
+section {
+  max-width: 1020px;
   margin: auto;
+
+  p {
+    width: 66%;
+  }
+  aside {
+    width: 32%;
+    float: right;
+
+    p {
+      width: 100%;
+      font-family: @df-sans;
+      font-size: 18px;
+      color: @df-dark-gray;
+      line-height: 1.5em;
+    }
+    .about {
+      font-family: Arvo, @df-serif;
+      font-size: 26px;
+    }
+  }
 }
 
 .chatter {
@@ -41,14 +71,15 @@ section.narrow {
 
 .divider {
   background: @red;
+  margin-top: 40px;
   height: 20px;
   width: 130px;
-  margin: 40px auto;
 }
 
 .byline {
   font-weight: bold;
-  text-align: center;
+  font-size: 18px;
+  line-height: 1.5em;
 }
 
 .dropcap {
@@ -62,12 +93,9 @@ section.narrow {
 }
 
 .caption {
-  max-width: 670px;
-  margin: auto;
   font-style: italic;
   font-size: 15px;
   color: @df-middle-gray;
-  padding-top: 10px;
   line-height: 1.5em;
 }
 
@@ -77,8 +105,7 @@ section.narrow {
   font-weight: bold;
   text-transform: uppercase;
   font-style: italic;
-  font-size: 36px;
-  text-align: center;
+  font-size: 26px;
 }
 
 .contact {
@@ -86,4 +113,14 @@ section.narrow {
   margin: auto;
   font-weight: bold;
   font-style: italic;
+}
+
+.gallery {
+  img {
+    display: none;
+
+    &.shown {
+      display: block;
+    }
+  }
 }
