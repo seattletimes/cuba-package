@@ -1,6 +1,8 @@
 @import "seattletimes";
 
 @red: #D92344;
+@yellow: #f2c43a;
+@fancy: "Arvo", @df-sans;
 
 body {
   color: #222;
@@ -11,22 +13,31 @@ body {
 }
 
 .story-link {
-  font-family: "Arvo", @df-sans;
+  font-family: @fancy;
   text-transform: uppercase;
   color: black;
   font-size: 14px;
-  padding: 0 5px;
+  padding: 0 8px;
   vertical-align: top;
   margin-top: 20px;
 }
 
-.img-title {
-  width: 40%;
-  margin: auto;
-  margin-top: -76px;
+.header {
+  margin-top: 30px;
+  .display-flex();
+  .align-items(center);
+  .img-title {
+    .flex(2);
 
-  img {
-    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  .chatter {
+    .flex(3);
+    font-family: @df-sans;
+    font-style: italic;
+    padding-left: 30px;
   }
 }
 
@@ -56,17 +67,7 @@ section {
       color: @df-dark-gray;
       line-height: 1.5em;
     }
-    .about {
-      font-family: Arvo, @df-serif;
-      font-size: 26px;
-    }
   }
-}
-
-.chatter {
-  font-family: @df-sans;
-  font-style: italic;
-  text-align: center;
 }
 
 .divider {
@@ -100,7 +101,7 @@ section {
 }
 
 .subhed {
-  font-family: "Arvo", @df-serif;
+  font-family: @fancy;
   padding: 25px 0;
   font-weight: bold;
   text-transform: uppercase;
@@ -116,11 +117,34 @@ section {
 }
 
 .gallery {
-  img {
-    display: none;
+  border-top: 1px solid @yellow;
+  border-bottom: 1px solid @yellow;
 
-    &.shown {
+  img {
+    margin: auto;
+    display: none;
+    max-height: 800px;
+
+    &.active {
       display: block;
     }
   }
+}
+
+.about-journalists {
+  border-top: 1px solid @yellow;
+  font-family: @df-sans;
+  font-size: 16px;
+  line-height: 1.5em;
+  .inner {
+    .display-flex();
+  }
+  .author {
+    .flex(1);
+  }
+}
+
+.sidebar-hed {
+  font-family: @fancy;
+  font-size: 26px;
 }

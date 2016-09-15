@@ -2,7 +2,7 @@
   <p>LÁZARO LÓPEZ, Cuba —
 
   <aside>
-    <div class="about">About this series</div>
+    <div class="sidebar-hed">About this series</div>
 
     <p>Reporting for this story was made possible through a grant from the Seattle International Foundation.
   </aside>
@@ -57,13 +57,20 @@
 </section>
 
 <div class="gallery">
-  <% csv.captions.forEach(function(c) { %>
-    <% if (c.gallery == "havana") { %>
-      <img src="./assets/mainbar/<%= c.image %>">
-    <% } %>
+  <div class="prev">Previous</div>
+  <% csv.captions.filter(function(c) {
+    return c.gallery == "havana";
+  }).forEach(function(c, i) { %>
+      <% if (!i) { %>
+        <img src="./assets/mainbar/<%= c.image %>" class="active gallery-img">
+      <% } else { %>
+        <img data-src="./assets/mainbar/<%= c.image %>" class="gallery-img">
+      <% } %>
   <% }); %>
+  <div class="next">Next</div>
+  <div class="caption">HAVANA GALLERY</div>
 </div>
-<div class="caption">HAVANA GALLERY</div>
+
 
 <section>
   <p>Today some of Havana’s glories don’t look so faded. Large parts of Old Havana, where I once saw streets that could have belonged in a World War II movie, are now a stunning re-creation of its heyday. Fancy restaurants, art galleries and sidewalk cafés populate grand European buildings restored over the last few years. There’s even a microbrewery in the Plaza Vieja, a 16th-century square.
