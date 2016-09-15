@@ -118,6 +118,7 @@ section {
 .gallery {
   border-top: 1px solid @yellow;
   border-bottom: 1px solid @yellow;
+  margin: 40px 0;
   text-align: center;
   position: relative;
 
@@ -181,3 +182,34 @@ section {
   font-family: @fancy;
   font-size: 26px;
 }
+
+.sidestory {
+  position: relative;
+  margin: 40px 0;
+  padding: 40px;
+  border-top: 1px solid @yellow;
+  border-bottom: 1px solid @yellow;
+  font-family: @df-sans;
+  font-size: 16px;
+  line-height: 1.5em;
+
+  p {
+    width: 100%;
+  }
+
+  .caret {
+    color: @yellow;
+    margin-right: 4px;
+  }
+  .read-more {
+    background: white;
+    border: 1px solid @yellow;
+    padding: 1px 10px 0 10px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+  }
+}
+
