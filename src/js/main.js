@@ -32,6 +32,16 @@ qsa(".sidestory").forEach(function(r) {
         r.classList.remove("expanded");
       } else {
         r.classList.add("expanded");
+        var inner = r.querySelector(".inner");
+        var height = inner.offsetHeight;
+        inner.style.height = "0px";
+        inner.classList.add("animate");
+        var reflow = inner.offsetHeight;
+        inner.style.height = height + "px";
+        setTimeout(function() {
+          inner.style.height = "";
+          inner.classList.remove("animate");
+        }, 300);
       }
     }
   })

@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask("process-images", function() {
 
-    var files = grunt.file.expand("src/assets/mainbar/*.jpg");
+    var files = grunt.file.expand("src/assets/internet/*.jpeg");
 
     files.forEach(function(f) {
       var buffer = fs.readFileSync(f);

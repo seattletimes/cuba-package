@@ -26,7 +26,28 @@
   <p>Less than 0.1 percent of Cubans have a fixed broadband subscription, compared with 10.5 percent of Costa Ricans and 31 percent of U.S. residents, according to the World Bank.
   <p>Still, 30 percent of Cubans use the internet. That’s well below the Latin American average, but it shows the popularity of the 153 or so Wi-Fi hot spots the Cuban government has set up as it tries to keep a lid on soaring demand.
 
-  <div class="caption">Kcho gallery</div>
+    <div class="gallery">
+    <div class="subhed">Kcho gallery</div>
+    <div class="chatter">Chatter</div>
+    <i class="prev arrow fa fa-chevron-left" aria-hidden="true"></i>
+    <% csv.captions.filter(function(c) {
+      return c.gallery == "kcho";
+    }).forEach(function(c, i) { %>
+        <% if (!i) { %>
+          <div class="active gallery-img">
+            <img src="./assets/internet/<%= c.image %>">
+            <div class="caption"><%= c.caption %></div>
+          </div>
+        <% } else { %>
+          <div class="gallery-img">
+            <img data-src="./assets/internet/<%= c.image %>">
+            <div class="caption"><%= c.caption %></div>
+          </div>
+        <% } %>
+        
+    <% }); %>
+    <i class="next arrow fa fa-chevron-right" aria-hidden="true"></i>
+  </div>
 
   <div class="divider"></div>
   <div class="subhed">Google meets Fidel</div>
@@ -83,7 +104,7 @@
 
 <section>
   <p class="caption">Anywhere there is shade and places to sit, Wi-Fi entrepreneurs will set up a hotspot, like this one in La Rampa in Havana.</p>
-  
+
   <p>One of these hustlers, who wants his name withheld, charges the equivalent of $1 for one hour of connection in La Rampa, Havana’s most-happening avenue, an area with big hotels, government buildings and Coppelia, a famous ice-cream parlor.
   <p>He says he left his job as a bartender to do this for a couple of hours a day. With eight to 10 people connecting per hour, it’s not bad money.
   “People make do with what they have,” the 22-year-old says.

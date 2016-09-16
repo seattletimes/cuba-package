@@ -238,12 +238,18 @@ section {
   }
 
   .inner {
+    display: none;
     height: 0;
     overflow: hidden;
 
     .expanded& {
-      height: 100%;
+      display: block;
+      height: auto;
       margin: 40px;
+    }
+
+    &.animate {
+      transition: all 0.3s ease-in-out;
     }
   }
 
@@ -254,6 +260,11 @@ section {
   .caret {
     color: @yellow;
     margin-right: 4px;
+    transition: transform 0.3s ease-in-out;
+
+    .expanded& {
+      transform: rotateZ(90deg);
+    }
   }
   .read-more {
     left: 40px;
