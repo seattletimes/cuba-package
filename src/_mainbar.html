@@ -11,28 +11,24 @@
   <p>That man, whom historians described as a “tempest on horseback,” was my grandmother’s grandfather, a U.S.-educated Cuban aristocrat who took up arms against the mother country.
   <p>Despite getting killed here in 1869, the general still casts a long shadow in my family. His portrait hangs in my Redmond living room, where my 5-year-old son calls him <em>Abuelito</em>.
   <p>To a family that cherishes Cuban origins going back to the days of Columbus, <em>Abuelito</em> stands for an island that had grown fairly rich and sophisticated as the hub of Spain’s New World empire. It fiercely fought for freedom while remaining tightly linked to the U.S. and the wider Western world.
-</section>
     
-<div class="aspect-outer">
-  <div class="aspect-inner">
-    <iframe src="//players.brightcove.net/1509317113/default_default/index.html?videoId=5125409078001" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+  <div class="aspect-outer">
+    <div class="aspect-inner">
+      <iframe src="//players.brightcove.net/1509317113/default_default/index.html?videoId=5125409078001" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+    </div>
   </div>
-</div>
 
-<section>
   <p>That idea of Cuba was buried under Fidel Castro’s communist revolution. Hundreds of thousands, including my father and grandmother, fled the island. My uncle stayed, first to fight the revolution, then to embrace it.
-  <p>In time, stifling controls and a long standoff with the U.S. condemned to stagnation what had been a modern country, albeit one full of disparities.
+  <p>In time, stifling controls and a long standoff with the U.S. condemned to economic stagnation what had been a modern country, albeit one full of disparities.
   <p>That conflict, as well as the state’s grip on the economy, has finally started to recede.
-</section>
 
-<img src="./assets/mainbar/Cuba_Mainbar_InlineOptions_009.jpg" alt="">
+  <img src="./assets/mainbar/Cuba_Mainbar_InlineOptions_009.jpg" alt="">
 
-<section>
     <p class="caption">In the heat of the afternoon, Cubans build a house in the countryside in Ciego de Ávila province.</p>
 
     <p>Last March, President Obama visited the island to bury what he called “the last remnant of the Cold War in the Americas,” easing U.S. travel and trade restrictions on the island and re-establishing diplomatic relations the previous year.
-    <p>I had visited Cuba once, 15 years ago, and found the home of my ancestors a depressing ruin. This time, drawn by the specter of change, I’ve returned to get a glimpse of what kind of Cuba will emerge as the U.S. lifts its quarantine.
-    <p>Rummaging through the ashes of old family stories, I found a nation that’s slowly regaining some of its old capitalist bustle, even as it struggles with deepening inequality and Marxist rigidity.
+    <p>I had visited Cuba once, 15 years ago, and found the home of my ancestors a depressing ruin. This time, drawn by the specter of change, I’ve returned to get a glimpse of what kind of Cuba will emerge as it reconciles with the U.S.
+    <p>Rummaging through the ashes of old family stories, I found a nation that’s slowly regaining some of its old capitalist bustle, even as it struggles with deepening inequality and bureaucratic rigidity.
     <p>The trip to Lázaro López from Havana, Cuba’s capital, takes four hours — first on a sparsely trafficked highway cutting through vast uninhabited stretches, then on the two-lane Central Road, where cars rented by tourists pile up behind ox carts.
     <p>A few dusty miles off the main road near the town of Ciego de Ávila there’s a giant Cuban flag marking a monument in the lush <em>manigua</em> where a Spanish stronghold once stood.
     <p>At age 35, <em>Abuelito</em> died assaulting that fort. His body, hurriedly buried by his retreating troops, wasn’t found until decades later, when a local boy digging up a root ended up pulling up the fallen general’s sword instead.
@@ -71,31 +67,14 @@
   <p>In 2001, when I last came here, Cuba bore the living scars of the so-called Special Period in Time of Peace, actually a period of warlike scarcity that followed the end of a generous Soviet subsidy a decade before.
   <p>Back then, Cubans were barred from entering hotels even as they had to hustle for tourism’s crumbs. Few dared speak freely.
 
-  <div class="gallery">
-    <div class="subhed">Havana gallery</div>
-    <div class="chatter">Chatter</div>
-    <i class="prev arrow fa fa-chevron-left" aria-hidden="true"></i>
-    <% csv.captions.filter(function(c) {
-      return c.gallery == "havana";
-    }).forEach(function(c, i) { %>
-        <% if (!i) { %>
-          <div class="active gallery-img">
-            <img src="./assets/mainbar/<%= c.image %>">
-            <div class="caption"><%= c.caption %></div>
-          </div>
-        <% } else { %>
-          <div class="gallery-img">
-            <img data-src="./assets/mainbar/<%= c.image %>">
-            <div class="caption"><%= c.caption %></div>
-          </div>
-        <% } %>
-        
-    <% }); %>
-    <i class="next arrow fa fa-chevron-right" aria-hidden="true"></i>
-  </div>
+  <%= t.include("_galleryTemplate.html", {
+    title: "Havana Gallery",
+    chatter: "Chatter",
+    keyword: "havana"
+  }) %>
 
   <p>Today some of Havana’s glories don’t look so faded. Large parts of Old Havana, where I once saw streets that could have belonged in a World War II movie, are now a stunning re-creation of its heyday. Fancy restaurants, art galleries and sidewalk cafés populate grand European buildings restored over the last few years. There’s even a microbrewery in the Plaza Vieja, a 16th-century square.
-  <p><em>Habaneros</em>, 15 years ago disoriented survivors of an economic apocalypse, seem more confident. Since the middle of the last decade, pirated foreign shows shared on USB drives allow many to follow global trends. The Obama administration’s loosening of restrictions on Cuba-bound family remittances means more money on the street.
+  <p><em>Habaneros</em>, 15 years ago survivors of an economic apocalypse, seem more confident. Since the middle of the last decade, pirated foreign shows shared on USB drives allow many to follow global trends. The Obama administration’s loosening of restrictions on Cuba-bound family remittances means more money on the street.
   <p>“There are still problems, such as scarcity,” says Modesto Phillip, a 55-year-old elevator technician working on a project to turn a Belle Époque shopping gallery into a luxury hotel. But, he adds, “the country has improved a lot. I see a good future.”
   <p>Thumping reggaeton, a blend of Caribbean rhythms and hip-hop, is everywhere, proof that despite the cliché, Cuba is not frozen in time. It just moves very slowly.
   <p>But there are signs of acceleration sparked by economic reforms undertaken by Raúl Castro after he stepped in for brother Fidel. Most Cubans are now allowed to travel, buy and sell property, and start small businesses.
@@ -117,33 +96,16 @@
   <p class="caption">Manager Hosmay González, 33, left, and Pedro Basulto, 37, a store clerk, sell eggs to a woman according to her ration card at a corner market in Centro Habana.</p>
       
   <p>Hosmay González, a former lab technician who runs a state-owned meat market in Central Havana, says his $16 monthly salary can triple if he exceeds his sales quota. “We want not only Cuba’s economy to improve, but for the population to benefit,” he says.
-  <p>Cuba’s old cosmopolitanism flourishes, too. La Fábrica de Arte Cubano, a government-sponsored art and performance space, wouldn’t be out of place in Brooklyn or Los Angeles. A former industrial facility, it’s now brimming with the hip and the elegant.
+  <p>Cuba’s old cosmopolitanism flourishes, too. The Fábrica de Arte Cubano, a government-sponsored art and performance space, wouldn’t be out of place in Brooklyn or Los Angeles. A former industrial facility, it’s now brimming with the hip and the elegant.
   <p>Curiously, one of the many bars in the place offers Miller Lite, an unlikely piece of contemporary Americana here. Camila Pérez, a 25-year-old bartender, found it at a local store, likely brought in by one of the many “mules” who supply local restaurants with goods bought in Miami.
   <p>Pérez has her own story of separation. Her grandmother was a dissident journalist who fled for the U.S. in the 1990s, where Pérez’s father joined her. Pérez stayed in Cuba with her mom. Now living in Miami Beach, her father refuses to come back to Cuba, which he considers a hard-line dictatorship.
   <p>Pérez says it is not, and that things are opening up. “We’re going to have access to what everybody else has,” she says. “It’s all about not getting angry at each other.”
 
-  <div class="gallery">
-    <div class="subhed">Fabrica gallery</div>
-    <div class="chatter">Chatter</div>
-    <i class="prev arrow fa fa-chevron-left" aria-hidden="true"></i>
-    <% csv.captions.filter(function(c) {
-      return c.gallery == "fabrica";
-    }).forEach(function(c, i) { %>
-        <% if (!i) { %>
-          <div class="active gallery-img">
-            <img src="./assets/mainbar/<%= c.image %>">
-            <div class="caption"><%= c.caption %></div>
-          </div>
-        <% } else { %>
-          <div class="gallery-img">
-            <img data-src="./assets/mainbar/<%= c.image %>">
-            <div class="caption"><%= c.caption %></div>
-          </div>
-        <% } %>
-        
-    <% }); %>
-    <i class="next arrow fa fa-chevron-right" aria-hidden="true"></i>
-  </div>
+  <%= t.include("_galleryTemplate.html", {
+    title: "Fabrica Gallery",
+    chatter: "Chatter",
+    keyword: "fabrica"
+  }) %>
 
   <div class="divider"></div>
   <div class="subhed">Cracks in the ice</div>
@@ -160,7 +122,7 @@
 <section>
   <p class="caption">The Christ of Havana statue overlooks the flare stack of the Nico López oil refinery in Cuba. </p>
 
-  <p>That lifeline is threatened by Venezuela’s ongoing collapse, the result of the oil-rich country’s fumbled attempt at Cuban-style socialism.
+  <p>That lifeline is threatened by Venezuela’s ongoing collapse, the result of the oil-rich country’s attempt at Cuban-style socialism.
   <p>“Cuba has very few options if net deliveries by (Venezuelan oil company) PDVSA fail to materialize,” says Jorge Piñon, a Cuba energy expert at the University of Texas.
   <p>Already the Cuban government has mandated cuts in fuel and power consumption, sparking fears of a new Special Period.
   <p>There’s also the question of whether freer markets will lead to democracy.
@@ -196,41 +158,24 @@
 <section>
   <p class="caption">Left: Clandestina, a local clothing and design boutique opened by Idania del Río and Leire Fernández, is thriving in Habana Vieja, Cuba. Right: Idania del Río, a designer behind the popular Clandestina design boutique.</p>
 
-  <p>Money is all the more important as inequality is on the rise. While taxi drivers and others working in tourism can make hundreds, if not a thousand dollars a month, Cuba’s average monthly salary is about $23. “I take home every night more than a doctor makes in a month,” boasts a young employee at a fancy bistro in old Havana.
+  <p>Money is all the more important as inequality is on the rise. While taxi drivers and others working in tourism can make hundreds, if not a thousand dollars a month, Cuba’s average monthly salary is about $24. “I take home every night more than a doctor makes in a month,” boasts a young employee at a fancy bistro in old Havana.
   <p>There are certainly more things to buy in Cuba than a decade ago. But only those with access to hard currency from family remittances, their own business or a tourism job can buy them.
   <p>The situation is pushing 79-year-old Amor Ortiz into entrepreneurship. The retired tourist guide’s pension amounts to $9 per month, so she wants to sell her grand apartment in central Havana to buy two smaller homes: one for her family, and one that she’ll run as a guesthouse.
 
   <div class="sidestory">
     <div class="read-more"><i class="caret fa fa-caret-right" aria-hidden="true"></i> More about salaries</div>
-    <%= t.include("./_salaries.html") %>
+    <%= t.include("_salaries.html") %>
   </div>
 
   <p>University students, who under the old rules would have been relatively privileged upon graduation, now face stark choices.
   <p>Engineers and doctors, if they’re to practice their professions, look forward to paltry state salaries (a doctor can make about $60 a month).
   <p>“Here only business people have a future,” says a pharmacy student at the University of Havana, who added that she’ll emigrate as soon as she gets her degree.
 
-  <div class="gallery">
-    <div class="subhed">Camaguey gallery</div>
-    <div class="chatter">Chatter</div>
-    <i class="prev arrow fa fa-chevron-left" aria-hidden="true"></i>
-    <% csv.captions.filter(function(c) {
-      return c.gallery == "camaguey";
-    }).forEach(function(c, i) { %>
-        <% if (!i) { %>
-          <div class="active gallery-img">
-            <img src="./assets/mainbar/<%= c.image %>">
-            <div class="caption"><%= c.caption %></div>
-          </div>
-        <% } else { %>
-          <div class="gallery-img">
-            <img data-src="./assets/mainbar/<%= c.image %>">
-            <div class="caption"><%= c.caption %></div>
-          </div>
-        <% } %>
-        
-    <% }); %>
-    <i class="next arrow fa fa-chevron-right" aria-hidden="true"></i>
-  </div>
+  <%= t.include("_galleryTemplate.html", {
+    title: "Camaguey Gallery",
+    chatter: "Chatter",
+    keyword: "camaguey"
+  }) %>
 
   <div class="divider"></div>
   <div class="subhed">Navigating the maze</div>
@@ -243,28 +188,11 @@
   <p>Across the city, shops display foreign brands. I run into a swank lounge with reddish lighting and a French name: “Mélangé.”
   <p>“Don’t you see how pretty Camagüey has become?” asks my cousin Livita Castillo, whom I surprise with my visit.
 
-  <div class="gallery">
-    <div class="subhed">Family gallery</div>
-    <div class="chatter">Chatter</div>
-    <i class="prev arrow fa fa-chevron-left" aria-hidden="true"></i>
-    <% csv.captions.filter(function(c) {
-      return c.gallery == "family";
-    }).forEach(function(c, i) { %>
-        <% if (!i) { %>
-          <div class="active gallery-img">
-            <img src="./assets/mainbar/<%= c.image %>">
-            <div class="caption"><%= c.caption %></div>
-          </div>
-        <% } else { %>
-          <div class="gallery-img">
-            <img data-src="./assets/mainbar/<%= c.image %>">
-            <div class="caption"><%= c.caption %></div>
-          </div>
-        <% } %>
-        
-    <% }); %>
-    <i class="next arrow fa fa-chevron-right" aria-hidden="true"></i>
-  </div>
+  <%= t.include("_galleryTemplate.html", {
+    title: "Family Gallery",
+    chatter: "Chatter",
+    keyword: "family"
+  }) %>
 
   <p>But Camagüey is still a hard place to make a living, as the tourists fueling Havana’s vibrancy are rare.
   <p>The Special Period has left enduring wounds. Horse-drawn carriages, which became popular when the Soviet oil supply dried up, remain a common mode of transportation.
@@ -301,7 +229,7 @@
   <p>I wonder if the revolution’s appeal will fade when its elderly authors are out of the picture, their famed defiance made irrelevant by peace with the U.S.
   <p>Then I think about the French Revolution of 1789, which spilled a lot of blood. Its lofty principles of freedom, fraternity and equality are core to modern France. So is the bellicose, revolutionary-era <em>Marseillaise</em>.
   <p>Will 1959 have a similar half-life here, Che Guevara in tow?
-  <p>Izquierdo feels the latest changes are irreversible, and deeper restructuring will in time solve Cubans’ economic problems. But one must be patient.
+  <p>Izquierdo feels the latest changes are irreversible, and deeper restructuring will in time solve Cubans’ economic problems.
   <p>Further reform isn’t likely while 90-year old Fidel Castro, the one-time rebel who broke with Cuba’s capitalist past, is alive, he says.
   <p>“Maybe,” Izquierdo says, “it’s a matter of respect for tradition, for history.”
 

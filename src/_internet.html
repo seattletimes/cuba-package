@@ -24,30 +24,13 @@
   <p>The hardships of getting online in Cuba, and the resourcefulness Cubans muster to do it, reflect the contradictions of an oddball country undergoing a transition to globalization that’s inevitable — but far slower than many here want.
   <p>The government still wants to control access to the internet. But authorities also realize its potential to foster the economic growth Cuba’s citizens badly need — and their unquenched appetite for information.
   <p>Less than 0.1 percent of Cubans have a fixed broadband subscription, compared with 10.5 percent of Costa Ricans and 31 percent of U.S. residents, according to the World Bank.
-  <p>Still, 30 percent of Cubans use the internet. That’s well below the Latin American average, but it shows the popularity of the 153 or so Wi-Fi hot spots the Cuban government has set up as it tries to keep a lid on soaring demand.
+  <p>Still, 30 percent of Cubans use the internet. That’s well below the Latin American average, but it shows the popularity of the 153 or so Wi-Fi hot spots the Cuban government has set up as it tries to satisfy soaring demand.
 
-    <div class="gallery">
-    <div class="subhed">Kcho gallery</div>
-    <div class="chatter">Chatter</div>
-    <i class="prev arrow fa fa-chevron-left" aria-hidden="true"></i>
-    <% csv.captions.filter(function(c) {
-      return c.gallery == "kcho";
-    }).forEach(function(c, i) { %>
-        <% if (!i) { %>
-          <div class="active gallery-img">
-            <img src="./assets/internet/<%= c.image %>">
-            <div class="caption"><%= c.caption %></div>
-          </div>
-        <% } else { %>
-          <div class="gallery-img">
-            <img data-src="./assets/internet/<%= c.image %>">
-            <div class="caption"><%= c.caption %></div>
-          </div>
-        <% } %>
-        
-    <% }); %>
-    <i class="next arrow fa fa-chevron-right" aria-hidden="true"></i>
-  </div>
+  <%= t.include("_galleryTemplate.html", {
+    title: "Kcho Gallery",
+    chatter: "Chatter",
+    keyword: "kcho"
+  }) %>
 
   <div class="divider"></div>
   <div class="subhed">Google meets Fidel</div>
@@ -91,19 +74,19 @@
 
   <p>Meanwhile, Cubans, many of whom have smartphones and computers either bought here or sent by family abroad, find ways to satiate their appetite for information while living without a “cloud.”
   <p>One way is through an offline content-sharing system dubbed <em>el paquete</em>. It’s a USB drive-load of Latin American soap operas, downloaded websites, and television series such as “Grey’s Anatomy” and “Game of Thrones.” Couriers deliver it at home or customers pick it up at “copy centers,” stores that sell bootleg music and movies in addition to photocopy services,
-  <p><em>El paquete</em> comes with ads and coupons for local businesses. And it enables local startups to gather an audience. It’s a vehicle for Revolico, a local version of Craigslist. Its founder, Hiram Centelles, says the site is periodically blocked by the government.
+  <p><em>El paquete</em> comes with ads and coupons for local businesses. And it enables local startups to gather an audience. It’s a vehicle for Revolico, a local version of Craigslist. In the past, the site has been blocked by authorities, according to its founder, Hiram Centelles.
   <p>There’s no politics, and not much in the way of news. People in Cuba’s fledgling internet industry say that lets the government turn a blind eye. It’s still illegal, though.
   <p>“Most people request telenovelas,” says the owner of a “copy center” in Camagüey, who didn’t want his name disclosed. An interested user brings a USB drive and requests specific shows.
   <p>Buyers can monitor the copying process through a big computer monitor. The cost: 15 pesos, slightly more than half a U.S. dollar.
   <p>In Havana, there’s a new <em>paquete</em> available every day, according to the copy center owner. But in Camagüey, it’s a weekly deal.
-  <p>The dearth of internet access also has let an alternative ecosystem of apps flourish. People exchange photos, music and files using Zapya, a file-transfer app that creates a hot spot for other devices via Bluetooth. Instead of Google Hangouts or Skype, many use Imo, a messaging and video-chatting app.
+  <p>The dearth of internet access also has let an alternative ecosystem of apps flourish. People exchange photos, music and files using Zapya, a file-transfer app that creates a hot spot for other devices. Instead of Google Hangouts or Skype, many use Imo, a messaging and video-chatting app.
   <p>Connectify, which turns a computer into a hot spot, is what powers the cottage industry of black market Wi-Fi providers mooching off the public Wi-Fi spots.
 </section>
 
 <img src="./assets/internet/CubaDay2_Internet_8.jpeg" alt="">
 
 <section>
-  <p class="caption">Anywhere there is shade and places to sit, Wi-Fi entrepreneurs will set up a hotspot, like this one in La Rampa in Havana.</p>
+  <p class="caption">Anywhere there is shade and places to sit, Wi-Fi entrepreneurs, like the man third from left, will set up a hotspot, like this one in La Rampa in Havana.</p>
 
   <p>One of these hustlers, who wants his name withheld, charges the equivalent of $1 for one hour of connection in La Rampa, Havana’s most-happening avenue, an area with big hotels, government buildings and Coppelia, a famous ice-cream parlor.
   <p>He says he left his job as a bartender to do this for a couple of hours a day. With eight to 10 people connecting per hour, it’s not bad money.

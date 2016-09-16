@@ -156,11 +156,20 @@ section {
 }
 
 .gallery {
-  border-top: 1px solid @yellow;
-  border-bottom: 1px solid @yellow;
+  border-top: 2px solid @yellow;
+  border-bottom: 2px solid @yellow;
   margin: 40px 0;
   text-align: center;
-  position: relative;
+
+  .image-wrapper {
+    position: relative;
+
+    &:hover {
+      .arrow {
+        opacity: 1;
+      }
+    }
+  }
 
   .gallery-img {
     display: none;
@@ -170,19 +179,49 @@ section {
   }
 
   .arrow {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    color: white;
+    background: transparent;
     position: absolute;
+    height: 100%;
     top: 50%;
-    font-size: 40px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    font-size: 35px;
     cursor: pointer;
+    .display-flex();
+    .align-items(center);
+
+    @media @mobile {
+      font-size: 25px;
+    }
+
     &:hover {
-      color: @red;
+      background: rgba(0,0,0,0.4);
+
+      .arrow-icon {
+        background: transparent;
+      }
     }
 
     &.prev {
-      left: 10px;
+      left: 0px;
     }
     &.next {
-      right: 10px;
+      right: 0px;
+    }
+
+    .arrow-icon {
+      .flex(1);
+      padding: 20px;
+      background: rgba(0,0,0,0.4);
+      border-radius: 5px;
+      transition: all 0.3s ease-in-out;
+
+      @media @mobile {
+        padding: 15px;
+      }
     }
   }
   .chatter {
@@ -192,11 +231,16 @@ section {
 
   img {
     margin: auto;
-    max-height: 800px;
+    display: block;
+    max-height: 700px;
+
+    @media @mobile {
+      max-height: 300px;
+    }
   }
   .caption {
     text-align: left;
-    padding: 10px 20px 20px 20px;
+    padding: 20px;
   }
 }
 

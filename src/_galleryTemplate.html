@@ -1,0 +1,23 @@
+<div class="gallery">
+    <div class="subhed"><%= title %></div>
+    <div class="chatter"><%= chatter %></div>
+    <div class="image-wrapper">
+      <div class="prev arrow"><i class="prev arrow-icon fa fa-chevron-left" aria-hidden="true"></i></div>
+      <% grunt.data.csv.captions.filter(function(c) {
+        return c.gallery == keyword;
+      }).forEach(function(c, i) { %>
+          <% if (!i) { %>
+            <div class="active gallery-img">
+              <img alt="<%= c.caption %>" src="./assets/<%= c.image %>">
+            </div>
+          <% } else { %>
+            <div class="gallery-img">
+              <img alt="<%= c.caption %>" data-src="./assets/<%= c.image %>">
+            </div>
+          <% } %>
+          
+      <% }); %>
+      <div class="next arrow"><i class="next arrow-icon fa fa-chevron-right" aria-hidden="true"></i></div>
+    </div>
+    <div class="caption"></div>
+  </div>
