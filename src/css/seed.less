@@ -57,6 +57,10 @@ body {
     display: block;
   }
 
+  @media @mobile {
+    margin-top: 0;
+  }
+
   .chatter {
     .flex(3);
     font-family: @df-sans;
@@ -314,6 +318,10 @@ section {
 
   p {
     width: 100%;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
   }
 
   .caret {
