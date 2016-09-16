@@ -24,6 +24,7 @@ qsa(".gallery").forEach(function(g) {
     if (!next || !next.classList.contains("gallery-img")) return;
     var image = next.querySelector("img");
     caption.innerHTML = image.alt;
+    g.querySelector(".count").innerHTML = image.getAttribute("data-index") * 1 + 1;
     if (!image.src) image.src = image.getAttribute("data-src");
     if (nextNext && nextNext.classList.contains("gallery-img")) {
       var nnImage = nextNext.querySelector("img");
