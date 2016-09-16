@@ -12,6 +12,23 @@ body {
   margin: auto;
 }
 
+.aspect-outer {
+  .aspect-inner {
+    padding-bottom: percentage(9 / 16);
+    height: 0;
+    position: relative;
+
+    iframe {
+      border: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
 .story-link {
   font-family: @fancy;
   text-transform: uppercase;
@@ -20,6 +37,8 @@ body {
   padding: 0 8px;
   vertical-align: top;
   margin-top: 20px;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .header {
@@ -33,11 +52,21 @@ body {
       width: 100%;
     }
   }
+
+  @media @tablet {
+    display: block;
+  }
+
   .chatter {
     .flex(3);
     font-family: @df-sans;
     font-style: italic;
     padding-left: 30px;
+
+    @media @mobile {
+      padding-left: 0;
+      padding-bottom: 30px;
+    }
   }
 }
 
@@ -52,13 +81,23 @@ body {
 section {
   max-width: 1020px;
   margin: auto;
+  padding: 10px;
 
   p {
     width: 66%;
+
+    @media @mobile {
+      width: 100%;
+    }
   }
   aside {
     width: 32%;
     float: right;
+
+    @media @mobile {
+      width: 100%;
+      clear: both;
+    }
 
     p {
       width: 100%;
@@ -84,12 +123,13 @@ section {
 }
 
 .dropcap {
+  font-family: @fancy;
   float: left;
   line-height: 1em;
   margin-right: 8px;
   color: white;
   background: @red;
-  padding: 10px 8px 0px 10px;
+  padding: 6px 10px 4px 12px;
   font-size: 78px;
 }
 
@@ -172,7 +212,7 @@ section {
     .flex(1);
     .mug {
       float: left;
-      margin-right: 10px;
+      margin-right: 15px;
       height: 200px;
     }
   }
@@ -181,6 +221,8 @@ section {
 .sidebar-hed {
   font-family: @fancy;
   font-size: 26px;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .sidestory {
@@ -214,6 +256,7 @@ section {
     margin-right: 4px;
   }
   .read-more {
+    left: 40px;
     cursor: pointer;
     background: white;
     border: 2px solid @yellow;
