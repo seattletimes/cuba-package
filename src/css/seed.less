@@ -114,9 +114,18 @@ section {
 
     &.about-series {
       @media @mobile {
+        display: none;
+      }
+
+      &.mobile {
+        display: none;
         border-top: 1px solid @yellow;
         border-bottom: 1px solid @yellow;
         margin-bottom: 20px;
+
+        @media @mobile {
+          display: block;
+        }
       }
     }
   }
@@ -150,6 +159,7 @@ section {
 }
 
 .caption {
+  font-family: @df-serif;
   font-style: italic;
   font-size: 15px;
   color: @df-middle-gray;
@@ -331,6 +341,17 @@ section {
 
     &.animate {
       transition: all 0.3s ease-in-out;
+    }
+
+    .inline-img {
+      width: 50%;
+      float: right;
+      padding-top: 25px;
+      padding-left: 25px;
+
+      .caption {
+        padding: 10px 0 5px 0;
+      }
     }
   }
 
