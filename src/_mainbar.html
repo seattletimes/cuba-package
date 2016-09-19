@@ -241,7 +241,30 @@
   <p>“Maybe,” Izquierdo says, “it’s a matter of respect for tradition, for history.”
 
   <%= t.include("./_contact.html") %>
+
 </section>
+
+   <script src="//cdn.livefyre.com/Livefyre.js"></script>
+    <div style="max-width: 660px" id="livefyre-app-custom-1474314562790"></div>
+    <!-- Scripts -->
+    <script>
+    (function() {
+      Livefyre.require(['fyre.conv#3'], function(Conv) {
+        new Conv({
+          network: 'seattletimes.fyre.co'
+          
+          }, [{
+            app: 'main',
+            siteId: '316317',
+            articleId: 'custom-1474314562790',
+            el: 'livefyre-app-custom-1474314562790',
+            
+          }], function (widget) {
+            // Initialize or Auth
+          });
+      });
+    }());
+  </script>
 
 
 
