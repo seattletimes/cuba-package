@@ -26,12 +26,6 @@
   <p>Less than 0.1 percent of Cubans have a fixed broadband subscription, compared with 10.5 percent of Costa Ricans and 31 percent of U.S. residents, according to the World Bank.
   <p>Still, 30 percent of Cubans use the internet. That’s well below the Latin American average, but it shows the popularity of the 153 or so Wi-Fi hot spots the Cuban government has set up as it tries to satisfy soaring demand.
 
-  <%= t.include("_galleryTemplate.html", {
-    title: "Kcho Gallery",
-    chatter: "Chatter",
-    keyword: "kcho"
-  }) %>
-
   <div class="divider"></div>
   <div class="subhed">Google meets Fidel</div>
 
@@ -43,6 +37,13 @@
   <p>Free Wi-Fi, though, comes with a dose of revolutionary fervor. Security guards greet visitors with the politically correct title <em>compañero</em> (comrade). The Wi-Fi password is “<em>abajo el bloqueo</em>” — “down with the blockade,” which is what the Cuban government calls the U.S. trade embargo.
   <p>The original password was “here no one surrenders.”
   <p>Whatever its vows of resistance, Kcho’s museum has turned out to be the beachhead of the U.S. internet juggernaut Google in Cuba.
+
+  <%= t.include("_galleryTemplate.html", {
+    title: "Kcho Gallery",
+    chatter: "Chatter",
+    keyword: "kcho"
+  }) %>
+
   <p>In March 2016, as President Obama visited the island, the Mountain View, Calif., search giant set up a hall here with about 20 Chromebook computers and virtual reality headsets connected to ETECSA.
   <p>A Cuban flag and a big portrait of Fidel Castro wearing a baseball cap hang above a sign that reads “Google Cultural institute,” while Cuban internauts check Facebook or chat with their loved ones overseas.
   <p>Manuel Bridón, a 23-year-old soldier, is talking with his grandmother, who lives in Rochester, N.Y. He comes from San Miguel del Padrón, a suburb on the other side of Havana. It’s a one-hour journey, “sweaty and hot,” but it’s worth not having to pay outrageous amounts, he says.</p>
@@ -64,9 +65,13 @@
   </p>
 
   <p>The Cuban state is also aware of the value of the internet as a productivity tool. Cuba decidedly “intends to connect with the world,” reads a December 2014 editorial in Granma, the official Communist Party newspaper, published a few days before the U.S. and Cuba announced the re-establishment of relations. “The decision has been made not only to drink from that huge fountain of knowledge that is the ‘information highway,’ but also to place in it the best of our culture, education, knowledge and humanism, which represent the founding nucleus of the Cuban revolution and of the thought of its leaders.”
-  <p>At the same time, it’s clear the government doesn’t envisage a freewheeling online universe. “Cuba advances toward the safe digitalization of society, without haste but without pause,” the editorial said. It added that the internet must be a space of learning and development that can “guarantee the invulnerability of the Revolution, the defense of the culture and the sustainable socialism our people are building.”
 
-  <div class="caption">Paquete gallery</div>
+  <div class="sidestory">
+    <div class="read-more"><i class="caret fa fa-caret-right" aria-hidden="true"></i> More about the internet</div>
+    <%= t.include("./_internetsidebar.html") %>
+  </div>
+
+  <p>At the same time, it’s clear the government doesn’t envisage a freewheeling online universe. “Cuba advances toward the safe digitalization of society, without haste but without pause,” the editorial said. It added that the internet must be a space of learning and development that can “guarantee the invulnerability of the Revolution, the defense of the culture and the sustainable socialism our people are building.”
 
   <div class="divider"></div>
   <div class="subhed">Insatiable appetite</div>
@@ -78,6 +83,13 @@
   <p>“Most people request telenovelas,” says the owner of a “copy center” in Camagüey, who didn’t want his name disclosed. An interested user brings a USB drive and requests specific shows.
   <p>Buyers can monitor the copying process through a big computer monitor. The cost: 15 pesos, slightly more than half a U.S. dollar.
   <p>In Havana, there’s a new <em>paquete</em> available every day, according to the copy center owner. But in Camagüey, it’s a weekly deal.
+
+  <%= t.include("_galleryTemplate.html", {
+    title: "Paquete Gallery",
+    chatter: "Chatter",
+    keyword: "paquete"
+  }) %>
+
   <p>The dearth of internet access also has let an alternative ecosystem of apps flourish. People exchange photos, music and files using Zapya, a file-transfer app that creates a hot spot for other devices. Instead of Google Hangouts or Skype, many use Imo, a messaging and video-chatting app.
   <p>Connectify, which turns a computer into a hot spot, is what powers the cottage industry of black market Wi-Fi providers mooching off the public Wi-Fi spots.</p>
 

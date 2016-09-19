@@ -28,10 +28,10 @@
       </div>
 
       <div class="byline">
-        Story by Ángel González<br>
-        Seattle Times business reporter<br><br>
-        Photos by Bettina Hansen<br>
-        Seattle Times staff photographer
+        <strong>Story by Ángel González</strong><br>
+        <em>Seattle Times business reporter</em><br><br>
+        <strong>Photos by Bettina Hansen</strong><br>
+        <em>Seattle Times staff photographer</em>
       </div>
     </section>
 
@@ -45,14 +45,17 @@
       <div class="caption">A family in Camagüey uses a Wi-Fi hotspot in a public plaza to let a baby girl talk with her father.</div>
       <div class="header">
         <div class="img-title"><img src="./assets/cuba-title.svg"></div>
-        <div class="chatter">Internet connections are pricey in Cuba, but they make life less isolated. And for some enterprising people, renting Wi-Fi connections is a way to make a living.</div>
+
+        <div class="chatter">
+          <strong>Ingenious hacks link Cuba to the outside world</strong><br><br>
+          Internet connections are pricey in Cuba, but they make life less isolated. And for some enterprising people, renting Wi-Fi connections is a way to make a living.</div>
       </div>
 
       <div class="byline">
-        Story by Ángel González<br>
-        Seattle Times business reporter<br><br>
-        Photos by Bettina Hansen<br>
-        Seattle Times staff photographer
+        <strong>Story by Ángel González</strong><br>
+        <em>Seattle Times business reporter</em><br><br>
+        <strong>Photos by Bettina Hansen</strong><br>
+        <em>Seattle Times staff photographer</em>
       </div>
     </section>
 
@@ -63,17 +66,19 @@
     <img id="health" src="./assets/health/Cuba_0758_MedStudent.jpeg">
 
     <section>
-      <div class="caption">Sol Bockelie, a medical student at the Latin American School of Medicine in Cuba, walks in Playa Baracoa, the beach town where he is living while attending school just outside of Havana. Bockelie is from Kitsap County in Washington.</div>
+      <div class="caption">Sol Bockelie, a medical student at the Latin American School of Medicine in Cuba, walks in Playa Baracoa, the beach town where he lives while attending school. Bockelie, 30, who attended University of Washington, is from Bremerton.</div>
       <div class="header">
         <div class="img-title"><img src="./assets/cuba-title.svg"></div>
-        <div class="chatter">Cuba, known for its good health-care system despite deprivation, has lessons to teach the world, some experts say. A Bremerton man studying there intends to take his medical degree to underserved communities at home. And he won’t have daunting debt.</div>
+        <div class="chatter">
+          <strong>U.S. students get free ride in Cuban medical school</strong>
+          <br><br>Cuba, known for its good health-care system despite deprivation, has lessons to teach the world, some experts say. A Bremerton man studying there intends to take his medical degree to underserved communities at home. And he won’t have daunting debt.</div>
       </div>
 
       <div class="byline">
-        Story by Ángel González<br>
-        Seattle Times business reporter<br><br>
-        Photos by Bettina Hansen<br>
-        Seattle Times staff photographer
+        <strong>Story by Ángel González</strong><br>
+        <em>Seattle Times business reporter</em><br><br>
+        <strong>Photos by Bettina Hansen</strong><br>
+        <em>Seattle Times staff photographer</em>
       </div>
     </section>
 
@@ -83,6 +88,8 @@
       <div class="narrow">
         <div class="about-journalists">
           <p class="sidebar-hed"><strong>About the journalists</strong>
+
+            <img src="./assets/selfie.jpeg">
 
           <div class="inner">
             <div class="author">
@@ -97,6 +104,8 @@
         </div>
       </div>
     </section>
+
+    <%= t.include("./partials/_navBottom.html") %>
 
     <script src="app.js" async></script>
     <% if (json.project.production) { %>

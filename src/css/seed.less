@@ -97,6 +97,7 @@ section {
   aside {
     width: 32%;
     float: right;
+    padding-top: 20px;
 
     @media @mobile {
       width: 100%;
@@ -110,6 +111,14 @@ section {
       color: @df-dark-gray;
       line-height: 1.5em;
     }
+
+    &.about-series {
+      @media @mobile {
+        border-top: 1px solid @yellow;
+        border-bottom: 1px solid @yellow;
+        margin-bottom: 20px;
+      }
+    }
   }
 }
 
@@ -118,10 +127,13 @@ section {
   margin-top: 40px;
   height: 20px;
   width: 130px;
+
+  &.padded {
+    margin-bottom: 40px;
+  }
 }
 
 .byline {
-  font-weight: bold;
   font-size: 18px;
   line-height: 1.5em;
 }
@@ -177,6 +189,7 @@ section {
 
   .gallery-img {
     display: none;
+
     &.active {
       display: block;
     }
@@ -286,6 +299,7 @@ section {
   font-size: 26px;
   font-weight: bold;
   font-style: italic;
+  line-height: 1.3em;
 }
 
 .sidestory {
@@ -309,6 +323,10 @@ section {
       display: block;
       height: auto;
       margin: 40px;
+
+      @media @mobile {
+        margin: 40px 10px;
+      }
     }
 
     &.animate {
