@@ -29,9 +29,16 @@ body {
   }
 }
 
+.story-hed {
+  font-size: 38px;
+  font-family: @fancy;
+  line-height: 1.3em;
+  padding-bottom: 20px;
+}
+
 .story-link {
   font-family: @fancy;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   color: black;
   font-size: 14px;
   padding: 0 8px;
@@ -113,6 +120,7 @@ section {
     }
 
     &.about-series {
+      padding-top: 0;
       @media @mobile {
         display: none;
       }
@@ -122,6 +130,7 @@ section {
         border-top: 1px solid @yellow;
         border-bottom: 1px solid @yellow;
         margin-bottom: 20px;
+        padding-top: 20px;
 
         @media @mobile {
           display: block;
@@ -145,6 +154,7 @@ section {
 .byline {
   font-size: 18px;
   line-height: 1.5em;
+  padding-top: 10px;
 }
 
 .dropcap {
@@ -170,7 +180,7 @@ section {
   font-family: @fancy;
   padding: 25px 0;
   font-weight: bold;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   font-style: italic;
   font-size: 26px;
 }
@@ -349,8 +359,13 @@ section {
       padding-top: 25px;
       padding-left: 25px;
 
+      @media @mobile {
+        width: 100%;
+        padding-left: 0;
+      }
+
       .caption {
-        padding: 10px 0 5px 0;
+        padding: 10px 0;
       }
     }
   }
