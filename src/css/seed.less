@@ -126,6 +126,10 @@ section {
 
     &.caption {
       padding-top: 30px;
+
+      @media @mobile {
+        padding-top: 0;
+      }
     }
 
     @media @mobile {
@@ -189,6 +193,19 @@ section {
 
 .side-by-side {
   text-align: center;
+
+  img {
+    width: 49%;
+
+    @media @mobile {
+      width: 100%;
+      padding: 0 10px;
+    }
+  }
+  .caption {
+    text-align: left;
+    padding: 0 10px;
+  }
 }
 
 .caption {
@@ -196,8 +213,25 @@ section {
   font-style: italic;
   font-size: 15px;
   color: @df-middle-gray;
-  padding-top: 10px;
   line-height: 1.5em;
+
+  &.padded {
+    padding-top: 10px;
+  }
+
+  .left-right {
+    @media @mobile {
+      display: none;
+    }
+  }
+
+  .top-bottom {
+    display: none;
+
+    @media @mobile {
+      display: inline-block;
+    }
+  }
 }
 
 .subhed {
@@ -409,6 +443,12 @@ section {
       -moz-column-count: 2;
       -webkit-column-count: 2;
       column-count: 2;
+
+      @media @mobile {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+      }
 
       p {
         display: inline-block;
