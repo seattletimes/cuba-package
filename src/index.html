@@ -14,7 +14,7 @@
   <body>
     <%= t.include("./partials/_nav.html") %>
 
-    <div class="outmost">
+    <div class="outmost" id="family">
 
     <section>
       
@@ -29,7 +29,7 @@
 
     </section>
 
-        <img id="family" src="./assets/mainbar/Cuba_Mainbar_InlineOptions_001.jpg">
+        <img src="./assets/mainbar/Cuba_Mainbar_InlineOptions_001.jpg">
 
     <section>
 
@@ -43,9 +43,7 @@
 
     <%= t.include("./_mainbar.html") %>
 
-    <hr>
-
-    <img id="technology" class="lazy-load" data-src="./assets/internet/CubaDay2_Internet_1.jpg">
+    <hr id="technology">
 
     <section>
       
@@ -60,7 +58,7 @@
 
     </section>
 
-      <img id="technology" src="./assets/internet/CubaDay2_Internet_1.jpeg">
+      <img src="./assets/internet/CubaDay2_Internet_1.jpg">
 
     <section>
 
@@ -74,12 +72,9 @@
 
     <%= t.include("./_internet.html") %>
 
-    <hr>
-
-    <img id="health" class="lazy-load" data-src="./assets/health/Cuba_0758_MedStudent.jpg">
+    <hr id="health">
 
     <section>
-      <div class="caption">Sol Bockelie, a medical student at the Latin American School of Medicine in Cuba, walks in Playa Baracoa, the beach town where he lives while attending school. Bockelie, 30, who attended University of Washington, is from Bremerton.</div>
       <div class="header">
         <div class="img-title"><img src="./assets/cuba-title.svg"></div>
         <div class="chatter">
@@ -91,7 +86,7 @@
 
     </section>
 
-      <img id="health" src="./assets/health/Cuba_0758_MedStudent.jpeg">
+      <img src="./assets/health/Cuba_0758_MedStudent.jpg">
 
     <section>
 
@@ -111,7 +106,10 @@
           <p class="sidebar-hed"><strong>About the journalists</strong></p>
 
           <div class="inner">
-            <div class="author"><img src="./assets/selfie.jpeg"></div>
+            <div class="author">
+              <img src="./assets/selfie.jpg">
+              <!-- <div class="photo-cred">ÁNGEL GONZÁLEZ / THE SEATTLE TIMES</div> -->
+            </div>
 
             <div class="author">
               <strong>Ángel González</strong> is a business reporter at The Seattle Times, where he covers Amazon.com. He’s a graduate of the French Press Institute at University of Paris 2 and has master’s degrees in journalism and Latin American studies from the University of California, Berkeley. He’s a former bureau chief of Dow Jones in Houston. Born in Caracas, Venezuela, he was raised with his Cuban grandmother’s family stories of pirates, poets and liberators. Twitter: @gonzalezseattle. Email: agonzalez@seattletimes.com.

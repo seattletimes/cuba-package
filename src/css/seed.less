@@ -222,6 +222,10 @@ section {
   text-align: center;
   overflow: hidden;
 
+  .subhed {
+    padding: 28px 0;
+  }
+
   .image-wrapper {
     position: relative;
     background: @df-charcoal;
@@ -350,7 +354,7 @@ section {
     .justify-content(space-between);
   }
   .author {
-    padding-right: 20px;
+    padding-right: 30px;
     .flex(1);
     .mug {
       float: left;
@@ -359,6 +363,11 @@ section {
     }
     &:last-child {
       padding-right: 0;
+    }
+    .photo-cred {
+      // text-align: right;
+      color: @df-border-gray;
+      font-size: 11px;  
     }
   }
 }
@@ -431,10 +440,6 @@ section {
       //   width: 100%;
       //   padding-left: 0;
       // }
-
-      .caption {
-        padding-top: 10px;
-      }
     }
   }
 
