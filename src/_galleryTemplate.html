@@ -11,11 +11,11 @@
               <img alt="<%= c.caption %>" data-index="<%= i %>" src="./assets/<%= c.image %>">
             </div>
           <% } else { %>
-            <div class="gallery-img">
+            <div class="gallery-img" data-index="<%= i %>">
               <img alt="<%= c.caption %>" data-index="<%= i %>" data-src="./assets/<%= c.image %>">
             </div>
           <% } %>
-          
+
       <% }); %>
       <div class="prev arrow"><i class="prev arrow-icon fa fa-chevron-left" aria-hidden="true"></i></div>
       <div class="next arrow"><i class="next arrow-icon fa fa-chevron-right" aria-hidden="true"></i></div>

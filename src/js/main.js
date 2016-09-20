@@ -4,53 +4,60 @@ require("./lib/social");
 
 require("component-responsive-frame/child");
 
-var qsa = require("./lib/qsa.js");
+var $ = require("./lib/qsa");
+var closest = require("./lib/closest");
 
-qsa(".gallery").forEach(function(g) {
+var loadLazyGallery = function(frame) {
+  var img = frame.querySelector("img");
+  if (!img.src) img.src = img.getAttribute("data-src");
+  return img;
+};
+
+var advance = function(gallery, direction) {
+  var caption = gallery.querySelector(".caption");
+  var current = gallery.querySelector(".active");
+  var images = $(".gallery-img", gallery);
+  var index = images.indexOf(current);
+  var direction;
+  if (direction == "right") {
+    var next = images[index + 1];
+    var afterNext = images[index + 2];
+  } else {
+    var next = images[index - 1];
+    var afterNext = images[index - 2];
+  }
+
+  if (!next) return;
+
+  var image = loadLazyGallery(next);
+  caption.innerHTML = image.alt;
+  gallery.querySelector(".count").innerHTML = next.getAttribute("data-index") * 1 + 1;
+  if (afterNext) loadLazyGallery(afterNext);
+
+  next.classList.add("active");
+  current.classList.remove("active");
+
+  next.classList.remove("post-active", "animate", "fade");
+  current.classList.add("post-active", "animate");
+  var reflow = next.offsetHeight;
+  next.classList.add(direction);
+  current.classList.add("fade");
+  next.classList.add("animate");
+  next.classList.remove(direction);
+}
+
+$(".gallery").forEach(function(g) {
   g.querySelector(".caption").innerHTML = g.querySelector(".active img").alt;
   var nextImg = g.querySelector(".active + .gallery-img img");
   nextImg.src = nextImg.getAttribute("data-src");
   g.addEventListener("click", function(e) {
-    var target = e.target;
-    var caption = g.querySelector(".caption");
-    var current = g.querySelector(".active");
-    var direction;
-    if (target.classList.contains("next")) {
-      var next = current.nextElementSibling;
-      if (next) var nextNext = next.nextElementSibling;
-      direction = "right";
-    } else if (target.classList.contains("prev")){
-      var next = current.previousElementSibling;
-      if (next) var nextNext = next.previousElementSibling;
-      direction = "left";
-    }
-    if (!next || !next.classList.contains("gallery-img")) return;
-
-    var image = next.querySelector("img");
-    caption.innerHTML = image.alt;
-    g.querySelector(".count").innerHTML = image.getAttribute("data-index") * 1 + 1;
-    if (!image.src) image.src = image.getAttribute("data-src");
-    if (nextNext && nextNext.classList.contains("gallery-img")) {
-      var nnImage = nextNext.querySelector("img");
-      if (!nnImage.src) nnImage.src = nnImage.getAttribute("data-src");
-    }
-
-    current.classList.remove("active");
-    next.classList.add("active");
-
-    next.classList.remove("post-active", "animate");
-    current.classList.add("post-active", "animate")
-    var reflow = next.offsetHeight;
-    next.classList.add(direction);
-    var reflow = next.offsetHeight;
-    next.classList.add("animate");
-    var reflow = next.offsetHeight;
-    next.classList.remove(direction);
-
+    var target = closest(e.target, ".arrow");
+    if (!target.classList.contains("arrow")) return;
+    advance(g, target.classList.contains("next") ? "right" : "left");
   });
 });
 
-qsa(".sidestory").forEach(function(r) {
+$(".sidestory").forEach(function(r) {
   r.addEventListener("click", function(e) {
     if (e.target.classList.contains("read-more")) {
       if (r.classList.contains("expanded")) {
@@ -70,19 +77,4 @@ qsa(".sidestory").forEach(function(r) {
       }
     }
   })
-})
-
-// var animateScroll = require("./lib/animateScroll");
-
-// qsa(".main-nav a").forEach(function(a) {
-//   a.addEventListener("click", function(e) {
-//     var href = this.getAttribute("href");
-//     if (href.indexOf("#") != 0) return;
-//     var section = document.querySelector(href);
-//     if (!section) return;
-//     e.preventDefault();
-    
-//     animateScroll(section);
-//     window.history.pushState(href, href, href);
-//   });
-// });
+});
