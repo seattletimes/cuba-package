@@ -51,12 +51,30 @@ body {
   font-size: 14px;
   padding: 0 8px;
   vertical-align: top;
-  margin-top: 20px;
   font-weight: bold;
   font-style: italic;
 
   &.large {
     font-size: 16px;
+
+    @media (max-width: 660px) {
+      display: none;
+    }
+  }
+
+  .no-mobile & {
+    @media (max-width: 945px) {
+      display: none;
+    }
+  }
+  .mobile & {
+    display: none;
+    font-size: 13px;
+    padding: 0 4px;
+
+    @media (max-width: 945px) {
+      display: inline-block;
+    }
   }
 }
 
