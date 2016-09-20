@@ -2,7 +2,7 @@ require("./lib/social");
 // require("./lib/ads");
 // var track = require("./lib/tracking");
 
-require("component-responsive-frame/child");
+var Hammer = require("hammerjs");
 
 var $ = require("./lib/qsa");
 var closest = require("./lib/closest");
@@ -55,6 +55,9 @@ $(".gallery").forEach(function(g) {
     if (!target.classList.contains("arrow")) return;
     advance(g, target.classList.contains("next") ? "right" : "left");
   });
+  var touch = new Hammer(g);
+  touch.on("swiperight", () => advance(g, "left"));
+  touch.on("swipeleft", () => advance(g, "right"));
 });
 
 $(".sidestory").forEach(function(r) {
