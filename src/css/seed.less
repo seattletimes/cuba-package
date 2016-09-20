@@ -243,15 +243,20 @@ section {
     &.post-active {
       position: absolute;
       display: block;
-      opacity: 0;
       top: 0;
+      &.fade {
+        opacity: 0;
+      }
     }
+
     &.left {
       transform: translateX(-100%);
     }
+
     &.right {
       transform: translateX(100%);
     }
+
     &.animate {
       transition: all 0.3s ease-in-out;
     }
