@@ -54,6 +54,10 @@ body {
   margin-top: 20px;
   font-weight: bold;
   font-style: italic;
+
+  &.large {
+    font-size: 16px;
+  }
 }
 
 .header {
@@ -147,6 +151,7 @@ section {
     }
 
     &.about-series {
+      font-size: 16px;
       padding-top: 0;
       @media @mobile {
         display: none;
@@ -205,6 +210,30 @@ section {
   .caption {
     text-align: left;
     padding: 0 10px;
+  }
+
+  &.two-thirds {
+    .display-flex();
+
+    @media @mobile {
+      display: block;
+    }
+    .first {
+      .flex(1 1 800px);
+    }
+    .second {
+      .flex(1 1 1200px);
+    }
+    .middle {
+      .flex(0 0 5px);
+    }
+    img {
+      width: 100%;
+
+      @media @mobile {
+        padding: 0;
+      }
+    }
   }
 }
 
@@ -273,6 +302,7 @@ section {
 
   .gallery-img {
     display: none;
+    // max-height: 95vh;
 
     &.active {
       display: block;
