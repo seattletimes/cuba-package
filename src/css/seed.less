@@ -6,13 +6,14 @@
 
 body {
   color: #222;
-  font-size: 19px;
+  font-size: 18px;
   line-height: 1.5em;
 }
 
 .outmost {
   max-width: 1400px;
   margin: auto;
+  padding-top: 50px;
 }
 
 .aspect-outer {
@@ -37,6 +38,10 @@ body {
   font-family: @fancy;
   line-height: 1.3em;
   padding-bottom: 20px;
+
+  @media @mobile {
+    font-size: 30px;
+  }
 }
 
 .story-link {
@@ -52,7 +57,7 @@ body {
 }
 
 .header {
-  margin-top: 30px;
+  margin: 30px 0;
   .display-flex();
   .align-items(center);
   .img-title {
@@ -95,7 +100,7 @@ body {
 section {
   max-width: 1020px;
   margin: auto;
-  padding: 10px;
+  padding: 0 10px;
 
   p {
     width: 66%;
@@ -117,6 +122,10 @@ section {
       @media @mobile {
         display: block;
       }
+    }
+
+    &.caption {
+      padding-top: 30px;
     }
 
     @media @mobile {
@@ -157,14 +166,14 @@ section {
 .divider {
   background: @red;
   margin-top: 40px;
-  height: 20px;
+  height: 14px;
   width: 130px;
 }
 
 .byline {
   font-size: 18px;
   line-height: 1.5em;
-  padding-top: 10px;
+  padding-top: 25px;
 }
 
 .dropcap {
@@ -187,12 +196,13 @@ section {
   font-style: italic;
   font-size: 15px;
   color: @df-middle-gray;
+  padding-top: 10px;
   line-height: 1.5em;
 }
 
 .subhed {
   font-family: @fancy;
-  padding: 25px 0;
+  padding: 18px 0;
   font-weight: bold;
   // text-transform: uppercase;
   font-style: italic;
@@ -328,17 +338,22 @@ section {
 .about-journalists {
   border-top: 1px solid @yellow;
   font-family: @df-sans;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.5em;
   .inner {
     .display-flex();
+    .justify-content(space-between);
   }
   .author {
+    padding-right: 20px;
     .flex(1);
     .mug {
       float: left;
       margin-right: 15px;
       height: 200px;
+    }
+    &:last-child {
+      padding-right: 0;
     }
   }
 }
@@ -363,6 +378,7 @@ section {
     text-align: right;
     font-style: italic;
     padding-top: 16px;
+    font-weight: bold;
   }
 
   &.expanded {
