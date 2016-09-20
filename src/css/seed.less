@@ -77,7 +77,7 @@ body {
     font-style: italic;
     padding-left: 30px;
 
-    @media @mobile {
+    @media @tablet {
       padding-left: 0;
       padding-bottom: 30px;
     }
@@ -109,9 +109,20 @@ section {
     float: right;
     padding-top: 20px;
 
+    &.mobile {
+      display: none;
+      padding-top: 0;
+      padding-bottom: 20px;
+
+      @media @mobile {
+        display: block;
+      }
+    }
+
     @media @mobile {
       width: 100%;
       clear: both;
+      display: none;
     }
 
     p {
@@ -195,9 +206,11 @@ section {
   border-bottom: 2px solid @yellow;
   margin: 40px 0;
   text-align: center;
+  overflow: hidden;
 
   .image-wrapper {
     position: relative;
+    background: @df-charcoal;
 
     &:hover {
       .arrow {
@@ -211,6 +224,22 @@ section {
 
     &.active {
       display: block;
+    }
+
+    &.post-active {
+      position: absolute;
+      display: block;
+      opacity: 0;
+      top: 0;
+    }
+    &.left {
+      transform: translateX(-100%);
+    }
+    &.right {
+      transform: translateX(100%);
+    }
+    &.animate {
+      transition: all 0.3s ease-in-out;
     }
   }
 
@@ -263,6 +292,7 @@ section {
   .chatter {
     font-family: @df-sans;
     font-style: italic;
+    padding-bottom: 30px;
   }
 
   img {
@@ -276,6 +306,7 @@ section {
   }
   .photo-info {
     .display-flex();
+    background: white;
   }
   .index {
     .flex(0 0 60px);
@@ -338,6 +369,17 @@ section {
     height: 0;
     overflow: hidden;
 
+    .columns {
+      -moz-column-count: 2;
+      -webkit-column-count: 2;
+      column-count: 2;
+
+      p {
+        display: inline-block;
+        margin-bottom: 0;
+      }
+    }
+
     .expanded& {
       display: block;
       height: auto;
@@ -353,18 +395,19 @@ section {
     }
 
     .inline-img {
-      width: 50%;
-      float: right;
+      display: inline-block;
+      // width: 50%;
+      // float: right;
       padding-top: 25px;
-      padding-left: 25px;
+      // padding-left: 25px;
 
-      @media @mobile {
-        width: 100%;
-        padding-left: 0;
-      }
+      // @media @mobile {
+      //   width: 100%;
+      //   padding-left: 0;
+      // }
 
       .caption {
-        padding: 10px 0;
+        padding-top: 10px;
       }
     }
   }

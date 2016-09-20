@@ -2,7 +2,6 @@
     <div class="subhed"><%= title %></div>
     <div class="chatter"><%= chatter %></div>
     <div class="image-wrapper">
-      <div class="prev arrow"><i class="prev arrow-icon fa fa-chevron-left" aria-hidden="true"></i></div>
       <% var photos = grunt.data.csv.captions.filter(function(c) {
         return c.gallery == keyword;
       }) %>
@@ -19,6 +18,7 @@
           <% } %>
           
       <% }); %>
+      <div class="prev arrow"><i class="prev arrow-icon fa fa-chevron-left" aria-hidden="true"></i></div>
       <div class="next arrow"><i class="next arrow-icon fa fa-chevron-right" aria-hidden="true"></i></div>
     </div>
     <div class="photo-info">

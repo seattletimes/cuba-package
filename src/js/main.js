@@ -14,14 +14,18 @@ qsa(".gallery").forEach(function(g) {
     var target = e.target;
     var caption = g.querySelector(".caption");
     var current = g.querySelector(".active");
+    var direction;
     if (target.classList.contains("next")) {
       var next = current.nextElementSibling;
       if (next) var nextNext = next.nextElementSibling;
+      direction = "right";
     } else if (target.classList.contains("prev")){
       var next = current.previousElementSibling;
       if (next) var nextNext = next.previousElementSibling;
+      direction = "left";
     }
     if (!next || !next.classList.contains("gallery-img")) return;
+
     var image = next.querySelector("img");
     caption.innerHTML = image.alt;
     g.querySelector(".count").innerHTML = image.getAttribute("data-index") * 1 + 1;
@@ -30,8 +34,20 @@ qsa(".gallery").forEach(function(g) {
       var nnImage = nextNext.querySelector("img");
       if (!nnImage.src) nnImage.src = nnImage.getAttribute("data-src");
     }
+
     current.classList.remove("active");
     next.classList.add("active");
+    next.classList.remove("post-active", "animate");
+    current.classList.add("post-active", "animate")
+    var reflow = next.offsetHeight;
+
+
+    next.classList.add(direction);
+    var reflow = next.offsetHeight;
+    next.classList.add("animate");
+    var reflow = next.offsetHeight;
+    next.classList.remove(direction);
+
   });
 });
 
