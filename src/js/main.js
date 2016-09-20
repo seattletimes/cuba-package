@@ -37,11 +37,10 @@ qsa(".gallery").forEach(function(g) {
 
     current.classList.remove("active");
     next.classList.add("active");
+
     next.classList.remove("post-active", "animate");
     current.classList.add("post-active", "animate")
     var reflow = next.offsetHeight;
-
-
     next.classList.add(direction);
     var reflow = next.offsetHeight;
     next.classList.add("animate");
