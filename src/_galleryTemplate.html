@@ -8,7 +8,7 @@
       <% photos.forEach(function(c, i) { %>
           <% if (!i) { %>
             <div class="active gallery-img">
-              <img alt="<%= c.caption %>" data-index="<%= i %>" src="./assets/<%= c.image %>">
+              <img alt="<%= c.caption %>" data-index="<%= i %>" class="lazy-load" data-src="./assets/<%= c.image %>">
             </div>
           <% } else { %>
             <div class="gallery-img" data-index="<%= i %>">

@@ -6,13 +6,32 @@ var Hammer = require("hammerjs");
 
 var $ = require("./lib/qsa");
 var closest = require("./lib/closest");
+var debounce = require("./lib/debounce");
 
-var loadLazyGallery = function(frame) {
+// Lazy-load non-gallery images
+var lazyImages = $(".lazy-load");
+var lazyScroll = function() {
+  lazyImages = lazyImages.filter(function(img) {
+    if (img.src) return false;
+    var bounds = img.getBoundingClientRect();
+    // very conservative bounds here
+    if (bounds.bottom && bounds.top < window.innerHeight * 2) {
+      img.src = img.getAttribute("data-src");
+      return false;
+    }
+    return true;
+  });
+};
+window.addEventListener("scroll", debounce(lazyScroll));
+lazyScroll();
+
+var loadGalleryImage = function(frame) {
   var img = frame.querySelector("img");
   if (!img.src) img.src = img.getAttribute("data-src");
   return img;
 };
 
+// move between slides
 var advance = function(gallery, direction) {
   var caption = gallery.querySelector(".caption");
   var current = gallery.querySelector(".active");
@@ -29,27 +48,27 @@ var advance = function(gallery, direction) {
 
   if (!next) return;
 
-  var image = loadLazyGallery(next);
+  var image = loadGalleryImage(next);
   caption.innerHTML = image.alt;
   gallery.querySelector(".count").innerHTML = next.getAttribute("data-index") * 1 + 1;
-  if (afterNext) loadLazyGallery(afterNext);
+  if (afterNext) loadGalleryImage(afterNext);
 
   next.classList.add("active");
   current.classList.remove("active");
 
   next.classList.remove("post-active", "animate", "fade");
   current.classList.add("post-active", "animate");
-  var reflow = next.offsetHeight;
   next.classList.add(direction);
+  var reflow = next.offsetHeight;
   current.classList.add("fade");
   next.classList.add("animate");
+  reflow = next.offsetHeight;
   next.classList.remove(direction);
 }
 
-$(".gallery").forEach(function(g) {
+var galleries = $(".gallery");
+galleries.forEach(function(g) {
   g.querySelector(".caption").innerHTML = g.querySelector(".active img").alt;
-  var nextImg = g.querySelector(".active + .gallery-img img");
-  nextImg.src = nextImg.getAttribute("data-src");
   g.addEventListener("click", function(e) {
     var target = closest(e.target, ".arrow");
     if (!target.classList.contains("arrow")) return;
@@ -59,6 +78,19 @@ $(".gallery").forEach(function(g) {
   touch.on("swiperight", () => advance(g, "left"));
   touch.on("swipeleft", () => advance(g, "right"));
 });
+// lazy-load the next slide, don't do it so aggressively
+window.addEventListener("scroll", function() {
+  galleries = galleries.filter(function(g) {
+    var bounds = g.getBoundingClientRect();
+    if (bounds.top < window.innerHeight) {
+      var nextImg = g.querySelector(".active + .gallery-img img");
+      if (nextImg.src) return false;
+      nextImg.src = nextImg.getAttribute("data-src");
+    }
+    return true;
+  })
+})
+
 
 $(".sidestory").forEach(function(r) {
   r.addEventListener("click", function(e) {
@@ -73,6 +105,8 @@ $(".sidestory").forEach(function(r) {
         inner.classList.add("animate");
         var reflow = inner.offsetHeight;
         inner.style.height = height + "px";
+        //load images inside
+        lazyScroll();
         setTimeout(function() {
           inner.style.height = "";
           inner.classList.remove("animate");
