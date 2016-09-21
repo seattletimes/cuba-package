@@ -589,7 +589,6 @@ section {
   }
 
   .caret {
-    color: @yellow;
     margin-right: 4px;
     transition: transform 0.3s ease-in-out;
 
@@ -602,6 +601,7 @@ section {
     cursor: pointer;
     background: white;
     border: 2px solid @yellow;
+    background: @yellow;
     padding: 1px 10px 0 10px;
     font-weight: bold;
     position: absolute;
@@ -610,15 +610,15 @@ section {
     -webkit-transform: translateY(-50%);
 
     &:hover {
-      background: @yellow;
+      background: white;
 
       .caret {
-        color: black;
+        color: @yellow;
       }
     }
   }
 }
 
-.ad-bottom {
-  max-width: 660px;
-}
+// .ad-bottom {
+//   max-width: 660px;
+// }

@@ -1,5 +1,6 @@
 require("./lib/social");
-// require("./lib/ads");
+require("./lib/ads");
+require("./lib/comments");
 // var track = require("./lib/tracking");
 
 var Hammer = require("hammerjs");
@@ -100,7 +101,7 @@ window.addEventListener("scroll", function() {
       var id = stories[i].id;
       var link = document.querySelector(`.story-link:not(.large)[href*="${id}"]`);
       $(".story-link.highlighted").forEach(function(link) {
-        link.classList.remomve("highlighted");
+        link.classList.remove("highlighted");
       });
       link.classList.add("highlighted");
       break;

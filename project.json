@@ -6,12 +6,12 @@
     },
     "live": {
       "bucket": "projects.seattletimes.com",
-      "path": ""
+      "path": "2016/cuba-rediscovered"
     }
   },
   "title": "Cuba Rediscovered",
   "description": "Seattle Times reporter Ángel González revisits the home of his ancestors, explores how Cubans connect to the internet, and shares what the world could learn about their healthcare system.",
-  "url": "http://projects-staging.seattletimes.com/cuba-libre/",
+  "url": "https://projects.seattletimes.com/2016/cuba-rediscovered/",
   "slug": "",
   "tags": [],
   "image": "assets/social_teaser.jpg",
