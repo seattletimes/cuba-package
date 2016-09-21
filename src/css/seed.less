@@ -261,6 +261,7 @@ section {
 
   &.two-thirds {
     .display-flex();
+    padding: 0 10px;
 
     @media @mobile {
       display: block;
@@ -503,8 +504,7 @@ section {
 
 .sidestory {
   position: relative;
-  margin: 40px 0;
-  border-top: 2px solid @yellow;
+  // border-top: 2px solid @yellow;
   font-family: @df-sans;
   font-size: 16px;
   line-height: 1.5em;
@@ -517,6 +517,7 @@ section {
   }
 
   &.expanded {
+    margin: 40px 0;
     border-bottom: 2px solid @yellow;
   }
 
@@ -592,7 +593,7 @@ section {
     }
   }
   .read-more {
-    left: 40px;
+    right: 0;
     cursor: pointer;
     background: white;
     border: 2px solid @yellow;
