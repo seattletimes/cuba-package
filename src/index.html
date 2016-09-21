@@ -14,91 +14,105 @@
   <body>
     <%= t.include("./partials/_nav.html") %>
 
-    <div class="outmost" id="family">
+    <div class="outmost">
 
-    <section>
-      
-      <div class="header">
-        <div class="img-title"><img src="./assets/cuba-title.svg"></div>
-        <div class="chatter">
-          <strong>Part One</strong>
-          <div class="story-hed">Searching for Cuba’s future in the home of my ancestors</div>
-          As the U.S. begins reconciling with Cuba, Seattle Times reporter Ángel González found the island country is regaining some capitalist bustle thanks to reforms slowly doled out by its socialist government. Some restaurant owners and other small entrepreneurs are prospering, but most workers still struggle on an average salary of $24 a month. The big payoff, many hope, will come with the influx of U.S. tourists.
+    <div class="story-container" id="family">
+
+      <section>
+        
+        <div class="header">
+          <div class="img-title"><img src="./assets/cuba-title.svg"></div>
+          <div class="chatter">
+            <strong>Part One</strong>
+            <div class="story-hed">Searching for Cuba’s future in the home of my ancestors</div>
+            As the U.S. begins reconciling with Cuba, Seattle Times reporter Ángel González found the island country is regaining some capitalist bustle thanks to reforms slowly doled out by its socialist government. Some restaurant owners and other small entrepreneurs are prospering, but most workers still struggle on an average salary of $24 a month. The big payoff, many hope, will come with the influx of U.S. tourists.
+          </div>
         </div>
-      </div>
 
-    </section>
+      </section>
 
-        <img src="./assets/mainbar/Cuba_Mainbar_InlineOptions_001.jpg">
+          <img src="./assets/mainbar/Cuba_Mainbar_InlineOptions_001.jpg">
 
-    <section>
+      <section>
 
-      <div class="padded caption">Classic cars and bicitaxis, similar to pedicabs, sputter through the streets of Centro Habana in the early morning hours.</div>
+        <div class="padded caption">Classic cars and bicitaxis, similar to pedicabs, sputter through the streets of Centro Habana in the early morning hours.</div>
 
-      <div class="byline">
-        <strong>Story by Ángel González<br> Photos by Bettina Hansen</strong><br>
-        <em>Seattle Times staff</em>
-      </div>
-    </section>
-
-    <%= t.include("./_mainbar.html") %>
-
-    <hr id="technology">
-
-    <section>
-      
-      <div class="header">
-        <div class="img-title"><img src="./assets/cuba-title.svg"></div>
-        <div class="chatter">
-          <strong>Part Two</strong>
-          <div class="story-hed">Ingenious hacks link Cuba to the outside world</div>
-          Internet connections are scarce and pricey in Cuba, but they make life less isolated.  For some savvy entrepreneurs who’ve found a way around the government’s strict controls, renting Wi-Fi connections is a way to make a living.
+        <div class="byline">
+          <strong>Story by Ángel González<br> Photos by Bettina Hansen</strong><br>
+          <em>Seattle Times staff</em>
         </div>
-      </div>
+      </section>
 
-    </section>
+      <%= t.include("./_mainbar.html") %>
 
-      <img src="./assets/internet/CubaDay2_Internet_1.jpg">
+      <section><div class="ad-bottom"><%= t.include("partials/_ad.html", { type: "bannerBottom" }) %></div></section>
+    </div>
 
-    <section>
+    <div class="full divider"></div>
 
-      <div class="padded caption">A family in Camagüey uses a Wi-Fi hotspot in a public plaza to let a baby girl talk with her father.</div>
+    <div class="story-container" id="technology">
 
-      <div class="byline">
-        <strong>Story by Ángel González<br> Photos by Bettina Hansen</strong><br>
-        <em>Seattle Times staff</em>
-      </div>
-    </section>
-
-    <%= t.include("./_internet.html") %>
-
-    <hr id="health">
-
-    <section>
-      <div class="header">
-        <div class="img-title"><img src="./assets/cuba-title.svg"></div>
-        <div class="chatter">
-          <strong>Part Three</strong>
-          <div class="story-hed">U.S. students get free ride in Cuban medical school</div>
-          Cuba’s renowned health-care system, which flourishes despite the country’s poverty, still has lessons to teach the world, experts say. Hundreds of U.S. students have attended medical school tuition-free in Cuba, including a UW grad who plans on returning home to practice in underserved communities in Kitsap County.
+      <section>
+        
+        <div class="header">
+          <div class="img-title"><img src="./assets/cuba-title.svg"></div>
+          <div class="chatter">
+            <strong>Part Two</strong>
+            <div class="story-hed">Ingenious hacks link Cuba to the outside world</div>
+            Internet connections are scarce and pricey in Cuba, but they make life less isolated.  For some savvy entrepreneurs who’ve found a way around the government’s strict controls, renting Wi-Fi connections is a way to make a living.
+          </div>
         </div>
-      </div>
 
-    </section>
+      </section>
 
-      <img src="./assets/health/Cuba_0758_MedStudent.jpg">
+        <img src="./assets/internet/CubaDay2_Internet_1.jpg">
 
-    <section>
+      <section>
 
-      <div class="padded caption">Sol Bockelie, a medical student at the Latin American School of Medicine in Cuba, walks in Playa Baracoa, the beach town where he lives while attending school. Bockelie, 30, who attended University of Washington, is from Bremerton.</div>
+        <div class="padded caption">A family in Camagüey uses a Wi-Fi hotspot in a public plaza to let a baby girl talk with her father.</div>
 
-      <div class="byline">
-        <strong>Story by Ángel González<br> Photos by Bettina Hansen</strong><br>
-        <em>Seattle Times staff</em>
-      </div>
-    </section>
+        <div class="byline">
+          <strong>Story by Ángel González<br> Photos by Bettina Hansen</strong><br>
+          <em>Seattle Times staff</em>
+        </div>
+      </section>
 
-    <%= t.include("./_healthcare.html") %>
+      <%= t.include("./_internet.html") %>
+
+      <section><div class="ad-bottom"><%= t.include("partials/_ad.html", { type: "bannerBottom" }) %></div></section>
+    </div>
+
+    <div class="full divider"></div>
+
+    <div class="story-container" id="health">
+      <section>
+        <div class="header">
+          <div class="img-title"><img src="./assets/cuba-title.svg"></div>
+          <div class="chatter">
+            <strong>Part Three</strong>
+            <div class="story-hed">U.S. students get free ride in Cuban medical school</div>
+            Cuba’s renowned health-care system, which flourishes despite the country’s poverty, still has lessons to teach the world, experts say. Hundreds of U.S. students have attended medical school tuition-free in Cuba, including a UW grad who plans on returning home to practice in underserved communities in Kitsap County.
+          </div>
+        </div>
+
+      </section>
+
+        <img src="./assets/health/Cuba_0758_MedStudent.jpg">
+
+      <section>
+
+        <div class="padded caption">Sol Bockelie, a medical student at the Latin American School of Medicine in Cuba, walks in Playa Baracoa, the beach town where he lives while attending school. Bockelie, 30, who attended University of Washington, is from Bremerton.</div>
+
+        <div class="byline">
+          <strong>Story by Ángel González<br> Photos by Bettina Hansen</strong><br>
+          <em>Seattle Times staff</em>
+        </div>
+      </section>
+
+      <%= t.include("./_healthcare.html") %>
+    </div>
+
+    <div class="full divider"></div>
 
     <section>
       <div class="narrow">
@@ -111,11 +125,11 @@
               <div class="photo-cred">Ángel González / The Seattle Times</div>
             </div>
 
-            <div class="author">
-              <strong>Ángel González</strong> is a business reporter at The Seattle Times, where he covers Amazon.com. A graduate of the University of Paris 2, he went to journalism school at UC Berkeley. He’s a former bureau chief of Dow Jones in Houston. Born in Caracas, Venezuela, he was raised with his Cuban grandmother’s family stories of pirates, poets and liberators. Twitter: @gonzalezseattle. Email: agonzalez@seattletimes.com.
+            <div class="padded author">
+              <strong>Ángel González</strong> Ángel González is a business reporter at The Seattle Times, where he covers Amazon.com. A graduate of the University of Paris 2, he went to journalism school at University of California, Berkeley. He’s a former bureau chief of Dow Jones in Houston. Born in Caracas, Venezuela, he was raised with his Cuban grandmother’s family stories of pirates, poets and liberators.
             </div>
 
-            <div class="author">
+            <div class="padded author">
               <strong>Bettina Hansen</strong> has been a staff photographer at The Seattle Times since 2012. She is a native of Phoenix and attended journalism school at Arizona State University. She previously worked at the Hartford Courant in Connecticut. She covers a mix of sports, news and features and is always looking for a new community story. Twitter and Instagram: @bettinahansen. Email: bhansen@seattletimes.com.
             </div>
           </div>

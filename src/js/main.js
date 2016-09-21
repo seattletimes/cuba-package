@@ -1,5 +1,5 @@
 require("./lib/social");
-// require("./lib/ads");
+require("./lib/ads");
 // var track = require("./lib/tracking");
 
 var Hammer = require("hammerjs");
@@ -22,8 +22,8 @@ var lazyScroll = function() {
     return true;
   });
 };
-window.addEventListener("scroll", debounce(lazyScroll));
-lazyScroll();
+// window.addEventListener("scroll", debounce(lazyScroll));
+// lazyScroll();
 
 var loadGalleryImage = function(frame) {
   var img = frame.querySelector("img");
@@ -78,6 +78,10 @@ galleries.forEach(function(g) {
   touch.on("swiperight", () => advance(g, "left"));
   touch.on("swipeleft", () => advance(g, "right"));
 });
+
+var stories = $(".story-container").reverse();
+// var links = $(".story-link:not(.large)");
+
 // lazy-load the next slide, don't do it so aggressively
 window.addEventListener("scroll", function() {
   galleries = galleries.filter(function(g) {
@@ -89,6 +93,19 @@ window.addEventListener("scroll", function() {
     }
     return true;
   })
+
+  for (var i = 0; i < stories.length; i++) {
+    var bounds = stories[i].getBoundingClientRect();
+    if (bounds.top < window.innerHeight) {
+      var id = stories[i].id;
+      var link = document.querySelector(`.story-link:not(.large)[href*="${id}"]`);
+      $(".story-link.highlighted").forEach(function(link) {
+        link.classList.remomve("highlighted");
+      });
+      link.classList.add("highlighted");
+      break;
+    }
+  }
 })
 
 
