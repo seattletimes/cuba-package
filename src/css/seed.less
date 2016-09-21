@@ -124,6 +124,10 @@ body {
       padding-left: 0;
       padding-bottom: 30px;
     }
+
+    @media @mobile {
+      padding-bottom: 10px;
+    }
   }
 }
 
@@ -174,6 +178,12 @@ section {
       width: 100%;
       clear: both;
       display: none;
+
+      &.byline-wrapper {
+        display: block;
+        padding-top: 0;
+        padding-bottom: 15px;
+      }
     }
 
     p {
@@ -244,10 +254,28 @@ section {
   }
 }
 
+.next-up {
+  background: @yellow;
+  font-weight: bold;
+  font-family: @df-sans;
+  display: inline-block;
+  font-size: 16px;
+  padding: 2px 10px 1px 10px;
+}
+
 .byline {
   font-size: 18px;
   line-height: 1.5em;
   padding-top: 25px;
+
+  aside & {
+    padding-left: 15px;
+
+    @media @mobile {
+      padding-top: 0;
+      padding-left: 0;
+    }
+  }
 }
 
 .dropcap {
