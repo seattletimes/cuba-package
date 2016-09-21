@@ -52,13 +52,18 @@ body {
   // text-transform: uppercase;
   color: black;
   font-size: 14px;
-  padding: 0 8px;
+  margin: 0 8px;
   vertical-align: top;
   font-weight: bold;
   font-style: italic;
 
   &.highlighted {
-    text-decoration: underline;
+    border-bottom: 1px solid @red;
+  }
+
+  &:hover {
+    color: black;
+    border-bottom: 1px solid @red;
   }
 
   &.large {
@@ -66,6 +71,10 @@ body {
 
     @media (max-width: 660px) {
       display: none;
+    }
+
+    &:hover {
+      border-bottom: none;
     }
   }
 
@@ -176,11 +185,18 @@ section {
     }
 
     &.about-series {
-      font-size: 16px;
       padding-top: 0;
+      padding-left: 20px;
+
+      p {
+        // line-height: 1.25em;
+        margin: 15px 0;
+      }
+
 
       a {
         color: black;
+        font-size: 17px;
 
         &:hover {
           color: @df-navy;
@@ -189,6 +205,7 @@ section {
 
       @media @mobile {
         display: none;
+        padding-left: 0;
       }
 
       &.mobile {
@@ -200,6 +217,7 @@ section {
 
         @media @mobile {
           display: block;
+          padding-left: 0;
         }
       }
     }
