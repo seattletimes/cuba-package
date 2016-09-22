@@ -232,6 +232,22 @@ section {
         }
       }
     }
+
+    &.timeline {
+      padding-top: 0;
+      padding-left: 20px;
+      p {
+        font-size: 16px;
+      }
+      @media @mobile {
+        border-top: 1px solid @yellow;
+        border-bottom: 1px solid @yellow;
+        display: block;
+        padding-left: 0;
+        margin-bottom: 20px;
+        padding-top: 20px;
+      }
+    }
   }
 }
 
@@ -564,7 +580,7 @@ section {
   line-height: 1.5em;
 
   @media @tablet {
-    border-top: 2px solid @yellow;
+    border-top: 2px solid white;
     margin: 40px 0;
   }
 
@@ -651,18 +667,51 @@ section {
       transform: rotateZ(90deg);
     }
   }
-  .read-more {
+
+  .icon {
+    font-size: 38px;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    background: @yellow;
     right: 0;
+    position: absolute;
+    top: 0;
+    transform: translateY(-100px);
+    -webkit-transform: translateY(-100px);
+    z-index: 9;
+    border: 1px solid darken(@yellow, 10%);
+
+    .fa {
+      transform: translateY(40%);
+    }
+
+    @media @tablet {
+      font-size: 24px;
+      width: 50px;
+      height: 50px;
+      left: 0;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+
+      .fa {
+        transform: translateY(50%);
+      }
+    }
+  }
+  .read-more {
     cursor: pointer;
     background: white;
     border: 2px solid @yellow;
     background: @yellow;
     padding: 1px 10px 0 10px;
     font-weight: bold;
-    position: absolute;
-    top: 0;
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
+    right: 0;
+    position: absolute;
+    top: 0;
 
     &:hover {
       background: white;
@@ -670,6 +719,11 @@ section {
       .caret {
         color: @yellow;
       }
+    }
+
+    @media @tablet {
+      left: 46px;
+      right: auto;
     }
   }
 }
