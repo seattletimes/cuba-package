@@ -83,18 +83,7 @@ galleries.forEach(function(g) {
 var stories = $(".story-container").reverse();
 // var links = $(".story-link:not(.large)");
 
-// lazy-load the next slide, don't do it so aggressively
-window.addEventListener("scroll", function() {
-  galleries = galleries.filter(function(g) {
-    var bounds = g.getBoundingClientRect();
-    if (bounds.top < window.innerHeight) {
-      var nextImg = g.querySelector(".active + .gallery-img img");
-      if (nextImg.src) return false;
-      nextImg.src = nextImg.getAttribute("data-src");
-    }
-    return true;
-  })
-
+var navHighlight = function() {
   for (var i = 0; i < stories.length; i++) {
     var bounds = stories[i].getBoundingClientRect();
     if (bounds.top < window.innerHeight) {
@@ -107,6 +96,20 @@ window.addEventListener("scroll", function() {
       break;
     }
   }
+};
+
+// lazy-load the next slide, don't do it so aggressively
+window.addEventListener("scroll", function() {
+  galleries = galleries.filter(function(g) {
+    var bounds = g.getBoundingClientRect();
+    if (bounds.top < window.innerHeight) {
+      var nextImg = g.querySelector(".active + .gallery-img img");
+      if (nextImg.src) return false;
+      nextImg.src = nextImg.getAttribute("data-src");
+    }
+    return true;
+  })
+  navHighlight();
 })
 
 
@@ -133,3 +136,5 @@ $(".sidestory").forEach(function(r) {
     }
   })
 });
+
+navHighlight();

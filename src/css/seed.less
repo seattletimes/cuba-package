@@ -78,15 +78,16 @@ body {
     }
   }
 
-  .no-mobile & {
+  .no-mobile {
+    vertical-align: top;
     @media (max-width: 945px) {
       display: none;
     }
   }
-  .mobile & {
+  .mobile {
+    vertical-align: top;
     display: none;
     font-size: 13px;
-    padding: 0 4px;
 
     @media (max-width: 945px) {
       display: inline-block;
