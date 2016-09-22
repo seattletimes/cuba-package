@@ -57,6 +57,10 @@ body {
   font-weight: bold;
   font-style: italic;
 
+  @media @mobile {
+    margin: 0 4px;
+  }
+
   &.highlighted {
     border-bottom: 1px solid @red;
   }
@@ -724,6 +728,10 @@ section {
     @media @tablet {
       left: 46px;
       right: auto;
+    }
+
+    @media @mobile {
+      font-size: 14px;
     }
   }
 }
