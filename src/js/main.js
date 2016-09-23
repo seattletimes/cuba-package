@@ -1,6 +1,7 @@
 require("./lib/social");
 require("./lib/ads");
 require("./lib/comments");
+require("./tracking.js");
 // var track = require("./lib/tracking");
 
 var Hammer = require("hammerjs");
