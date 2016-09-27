@@ -114,38 +114,38 @@ window.addEventListener("scroll", function() {
 })
 
 
-$(".sidestory").forEach(function(r) {
-  r.addEventListener("click", function(e) {
-    if (e.target.classList.contains("read-more") || e.target.classList.contains("icon") || e.target.classList.contains("fa")) {
-      var inner = r.querySelector(".inner");
-      if (r.classList.contains("expanded")) {
-        var height = inner.offsetHeight;
-        inner.style.height = height + "px";
-        inner.classList.add("animate");
-        var reflow = inner.offsetHeight;
-        inner.style.height = "0px";
-        setTimeout(function() {
-          inner.classList.remove("animate");
-          inner.style.height = "";
-          r.classList.remove("expanded");
-        }, 300);
+// $(".sidestory").forEach(function(r) {
+//   r.addEventListener("click", function(e) {
+//     if (e.target.classList.contains("read-more") || e.target.classList.contains("icon") || e.target.classList.contains("fa")) {
+//       var inner = r.querySelector(".inner");
+//       if (r.classList.contains("expanded")) {
+//         var height = inner.offsetHeight;
+//         inner.style.height = height + "px";
+//         inner.classList.add("animate");
+//         var reflow = inner.offsetHeight;
+//         inner.style.height = "0px";
+//         setTimeout(function() {
+//           inner.classList.remove("animate");
+//           inner.style.height = "";
+//           r.classList.remove("expanded");
+//         }, 300);
         
-      } else {
-        r.classList.add("expanded");
-        var height = inner.offsetHeight;
-        inner.style.height = "0px";
-        inner.classList.add("animate");
-        var reflow = inner.offsetHeight;
-        inner.style.height = height + "px";
-        //load images inside
-        lazyScroll();
-        setTimeout(function() {
-          inner.style.height = "";
-          inner.classList.remove("animate");
-        }, 300);
-      }
-    }
-  })
-});
+//       } else {
+//         r.classList.add("expanded");
+//         var height = inner.offsetHeight;
+//         inner.style.height = "0px";
+//         inner.classList.add("animate");
+//         var reflow = inner.offsetHeight;
+//         inner.style.height = height + "px";
+//         //load images inside
+//         lazyScroll();
+//         setTimeout(function() {
+//           inner.style.height = "";
+//           inner.classList.remove("animate");
+//         }, 300);
+//       }
+//     }
+//   })
+// });
 
 navHighlight();
